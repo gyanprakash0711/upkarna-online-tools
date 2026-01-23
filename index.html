@@ -45,8 +45,35 @@
       if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          alert('Thank you for subscribing! We\'ll send you monthly financial tips and updates.');
-          this.reset();
+          const formData = new FormData(this);
+          const email = formData.get('email');
+
+          // Send to FormSubmit
+          fetch('https://formsubmit.co/el/hizusi', {
+            method: 'POST',
+            body: new URLSearchParams({
+              email: email,
+              subject: 'Newsletter Subscription',
+              message: `New newsletter subscription: ${email}`,
+              _captcha: 'false',
+              _template: 'table'
+            }),
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              alert('Thank you for subscribing! We\'ll send you monthly financial tips and updates.');
+              this.reset();
+            } else {
+              alert('There was an error. Please try again or contact us directly.');
+            }
+          })
+          .catch(error => {
+            alert('There was an error. Please try again or contact us directly.');
+            console.error('Error:', error);
+          });
         });
       }
     });

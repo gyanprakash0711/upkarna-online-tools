@@ -31,8 +31,40 @@
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          alert('Thank you for your message! We\'ll get back to you within 24-48 hours.');
-          this.reset();
+          const formData = new FormData(this);
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const subject = formData.get('subject');
+          const message = formData.get('message');
+
+          // Send to FormSubmit
+          fetch('https://formsubmit.co/el/hizusi', {
+            method: 'POST',
+            body: new URLSearchParams({
+              name: name,
+              email: email,
+              subject: subject,
+              message: message,
+              _subject: `Contact Form: ${subject}`,
+              _captcha: 'false',
+              _template: 'table'
+            }),
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              alert('Thank you for your message! We\'ll get back to you within 24-48 hours.');
+              this.reset();
+            } else {
+              alert('There was an error sending your message. Please try again or email us directly at gyanprakash0711@gmail.com');
+            }
+          })
+          .catch(error => {
+            alert('There was an error sending your message. Please try again or email us directly at gyanprakash0711@gmail.com');
+            console.error('Error:', error);
+          });
         });
       }
     });
