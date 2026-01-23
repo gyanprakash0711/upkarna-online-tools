@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inflation Impact Calculator – Calculate Inflation's Effect on Purchasing Power</title>
+  <meta name="description" content="Free Inflation Impact Calculator to calculate how inflation affects your money's purchasing power over time. See the real value loss and plan for inflation." />
+  <meta name="keywords" content="inflation calculator, purchasing power, inflation impact, real value, inflation rate, cost of living" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="inflation-impact-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Inflation Impact Calculator",
+        "item": "https://www.yoursite.com/calculators/inflation-impact-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Inflation Impact Calculator",
+    "description": "Calculate how inflation affects your money's purchasing power over time",
+    "url": "https://www.yoursite.com/calculators/inflation-impact-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is inflation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Inflation is the rate at which the general level of prices for goods and services rises, eroding purchasing power."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does inflation affect savings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your savings earn less than the inflation rate, you're actually losing money in real terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good inflation rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A moderate inflation rate (2-3%) is generally considered healthy for economic growth, but rates above 5-6% can be concerning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I protect against inflation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Invest in assets that historically outpace inflation like stocks, real estate, or inflation-protected securities."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Inflation Impact Calculator</span>
+  </nav>
+
+  <h1>Inflation Impact Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="current-amount">Current Amount (₹)</label>
+      <input type="text" id="current-amount" placeholder="e.g., 100000" />
+      <small class="help-text">Enter the current value of money or asset</small>
+    </div>
+    <div class="form-group">
+      <label for="inflation-rate">Annual Inflation Rate (%)</label>
+      <input type="text" id="inflation-rate" placeholder="e.g., 6.5" />
+      <small class="help-text">Average inflation rate (India: ~6.5%)</small>
+    </div>
+    <div class="form-group">
+      <label for="time-period">Time Period (Years)</label>
+      <input type="text" id="time-period" placeholder="e.g., 10" />
+      <small class="help-text">Number of years to calculate inflation impact</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" onclick="calculateInflationImpact()">Calculate Inflation Impact</button>
+    <button type="button" onclick="resetForm()">Reset</button>
+  </div>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <!-- 🔹 AD SLOT – AFTER RESULT (BEST RPM) -->
+  <div class="ads">
+    Ad Space
+    <!-- Replace with AdSense INS code after approval -->
+  </div>
+
+  <!-- SEO CONTENT + FAQ -->
+  <section class="content-section">
+
+    <h2>What is Inflation Impact Calculator?</h2>
+    <p>
+      This calculator helps you understand how inflation affects your money's purchasing power over time. By entering a current amount, expected inflation rate, and time period, you can see how much money you'll need in the future to buy the same goods.
+    </p>
+
+    <h2>Who Should Use This Calculator?</h2>
+    <ul>
+      <li>Long-term savers and investors</li>
+      <li>Retirement planners</li>
+      <li>Anyone concerned about purchasing power erosion</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is inflation?</h3>
+    <p>
+      Inflation is the rate at which the general level of prices for goods and services rises, eroding purchasing power.
+    </p>
+
+    <h3>How does inflation affect savings?</h3>
+    <p>
+      If your savings earn less than the inflation rate, you're actually losing money in real terms.
+    </p>
+
+    <h3>What is a good inflation rate?</h3>
+    <p>
+      A moderate inflation rate (2-3%) is generally considered healthy for economic growth, but rates above 5-6% can be concerning.
+    </p>
+
+    <h3>How can I protect against inflation?</h3>
+    <p>
+      Invest in assets that historically outpace inflation like stocks, real estate, or inflation-protected securities.
+    </p>
+
+  </section>
+
+  <!-- 🔹 AD SLOT – CONTENT BREAK -->
+  <div class="ads">
+    Ad Space
+  </div>
+
+  <p class="note">
+    Results are indicative. Actual inflation rates may vary based on economic conditions.
+  </p>
+
+</div>
+
+<script src="inflation-impact-calculator.js"></script>
+
+</body>
+</html>

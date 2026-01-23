@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EPF Calculator – Calculate Employee Provident Fund Maturity Amount</title>
+
+  <meta name="description"
+        content="Free EPF Calculator to calculate Employee Provident Fund maturity amount, total interest earned, and year-wise breakdown." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="epf-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "EPF Calculator",
+        "item": "https://www.yoursite.com/calculators/epf-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is EPF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Employee Provident Fund (EPF) is a retirement savings scheme for employees in India, where both employee and employer contribute 12% of the basic salary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is EPF interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EPF interest is compounded annually on the balance at the end of each year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the current EPF interest rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The current EPF interest rate is 8.15% per annum as notified by the EPFO."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When can I withdraw EPF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EPF can be withdrawn after 58 years of age or in case of unemployment, retirement, or specific needs with conditions."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">EPF Calculator</span>
+  </nav>
+
+  <h1>EPF Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="monthlyContribution">Monthly Contribution (₹)</label>
+      <input type="text" id="monthlyContribution" placeholder="e.g., 1500">
+      <small class="help-text">The amount contributed monthly to EPF (employee + employer share).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 8.15">
+      <small class="help-text">The current EPF interest rate (compounded annually).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="tenure">Tenure (Years)</label>
+      <input type="text" id="tenure" placeholder="e.g., 25">
+      <small class="help-text">Duration of EPF accumulation in years.</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateEPF()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <div class="content-section">
+    <h2>About EPF Calculator</h2>
+    <p>The Employee Provident Fund (EPF) is a mandatory retirement savings scheme in India. Both employees and employers contribute 12% of the basic salary to the fund. This calculator helps you estimate the maturity amount based on your monthly contributions and the prevailing interest rate.</p>
+
+    <h2>How EPF Works</h2>
+    <ul>
+      <li><strong>Contributions:</strong> Employee contributes 12% of basic salary, employer matches with another 12%.</li>
+      <li><strong>Interest:</strong> Compounded annually on the balance.</li>
+      <li><strong>Withdrawal:</strong> Allowed after 58 years or under specific conditions.</li>
+    </ul>
+
+    <h2>Key Benefits</h2>
+    <ul>
+      <li>Tax-free interest and withdrawals.</li>
+      <li>Guaranteed returns.</li>
+      <li>Long-term savings for retirement.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is EPF?</h3>
+      <p>Employee Provident Fund (EPF) is a retirement savings scheme for employees in India, where both employee and employer contribute 12% of the basic salary.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is EPF interest calculated?</h3>
+      <p>EPF interest is compounded annually on the balance at the end of each year.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the current EPF interest rate?</h3>
+      <p>The current EPF interest rate is 8.15% per annum as notified by the EPFO.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When can I withdraw EPF?</h3>
+      <p>EPF can be withdrawn after 58 years of age or in case of unemployment, retirement, or specific needs with conditions.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    <p>&copy; 2024 Upkarana Online Tools. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+<script src="epf-calculator.js"></script>
+</body>
+</html>

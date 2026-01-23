@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RD Calculator – Calculate Recurring Deposit Maturity Amount</title>
+
+  <meta name="description"
+        content="Free RD Calculator to calculate recurring deposit maturity amount, total interest earned, and month-wise breakdown." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="rd-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://upkarna-online-tools.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://upkarna-online-tools.github.io/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "RD Calculator",
+        "item": "https://upkarna-online-tools.github.io/calculators/rd-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an RD Calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An RD Calculator helps you calculate the maturity amount and interest earned on a Recurring Deposit based on monthly deposit, rate, tenure, and compounding frequency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is RD interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RD interest is calculated using compound interest on the accumulated deposits. The formula considers monthly deposits and compounding frequency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What compounding frequencies are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator supports quarterly and monthly compounding frequencies, as commonly used for RDs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are RD returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RD returns are guaranteed by banks up to Rs. 5 lakh under DICGC insurance. Always check current rates and terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses standard RD calculation formulas and provides accurate estimates. Actual returns may vary based on bank policies."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">RD Calculator</span>
+  </nav>
+
+  <h1>RD Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="monthlyDeposit">Monthly Deposit Amount (₹)</label>
+      <input type="text" id="monthlyDeposit" placeholder="e.g., 5000">
+      <small class="help-text">The amount you deposit monthly.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 6">
+      <small class="help-text">The rate offered by the bank.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="tenure">Tenure (Months)</label>
+      <input type="text" id="tenure" placeholder="e.g., 24">
+      <small class="help-text">Duration of the RD in months.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="compounding">Compounding Frequency</label>
+      <select id="compounding">
+        <option value="3">Quarterly</option>
+        <option value="1">Monthly</option>
+      </select>
+      <small class="help-text">How often interest is compounded.</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateRD()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="rdChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="rdTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Deposit (₹)</th>
+          <th>Interest Earned (₹)</th>
+          <th>Balance (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is a Recurring Deposit?</h2>
+    <p>A Recurring Deposit (RD) is a savings scheme where you deposit a fixed amount monthly for a specified period at a predetermined interest rate. It's ideal for building savings through regular contributions.</p>
+
+    <h2>Benefits of RD</h2>
+    <ul>
+      <li>Guaranteed returns</li>
+      <li>Flexible tenure options</li>
+      <li>Discipline in saving</li>
+      <li>Higher returns than savings accounts</li>
+    </ul>
+
+    <h2>How to Use This Calculator</h2>
+    <p>Enter your monthly deposit, expected interest rate, tenure, and compounding frequency. The calculator will show maturity amount, total interest, and month-wise growth.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is an RD Calculator?</h3>
+      <p>An RD Calculator helps you calculate the maturity amount and interest earned on a Recurring Deposit based on monthly deposit, rate, tenure, and compounding frequency.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is RD interest calculated?</h3>
+      <p>RD interest is calculated using compound interest on the accumulated deposits. The formula considers monthly deposits and compounding frequency.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What compounding frequencies are supported?</h3>
+      <p>The calculator supports quarterly and monthly compounding frequencies, as commonly used for RDs.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are RD returns guaranteed?</h3>
+      <p>RD returns are guaranteed by banks up to Rs. 5 lakh under DICGC insurance. Always check current rates and terms.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is this calculator?</h3>
+      <p>The calculator uses standard RD calculation formulas and provides accurate estimates. Actual returns may vary based on bank policies.</p>
+    </div>
+  </section>
+
+  <p class="note">
+    Note: This calculator provides estimates based on RD formulas. Actual RD rates and terms may vary by bank.
+  </p>
+
+</div>
+
+<script src="rd-calculator.js"></script>
+</body>
+</html>

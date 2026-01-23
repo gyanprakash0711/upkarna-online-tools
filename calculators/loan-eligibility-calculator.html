@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan Eligibility Calculator – Check Your Loan Eligibility | Upkarana Online Tools</title>
+  <meta name="description" content="Calculate your loan eligibility for home loans, personal loans, and car loans. Check EMI affordability and maximum loan amount you can get." />
+  <meta name="keywords" content="loan eligibility calculator, home loan eligibility, personal loan eligibility, car loan eligibility, EMI calculator, loan amount" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="loan-eligibility-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Loan Eligibility Calculator",
+        "item": "https://www.yoursite.com/calculators/loan-eligibility-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan Eligibility Calculator",
+    "description": "Calculate loan eligibility for home, personal, and car loans",
+    "url": "https://www.yoursite.com/calculators/loan-eligibility-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is loan eligibility calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Loan eligibility is calculated based on income, existing EMIs, credit score, and loan-to-value ratio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is debt-to-income ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Debt-to-income ratio is the percentage of your income that goes towards paying debts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much loan can I get?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maximum loan amount depends on your income, existing obligations, and lender's policies."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Loan Eligibility Calculator</span>
+  </nav>
+
+  <h1>Loan Eligibility Calculator</h1>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="loan-eligibility-form" class="calculator-form">
+
+    <div class="form-group">
+      <label for="loan-type">Loan Type</label>
+      <select id="loan-type" onchange="updateLoanFields()">
+        <option value="home">Home Loan</option>
+        <option value="personal">Personal Loan</option>
+        <option value="car">Car Loan</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="monthly-income">Monthly Income (₹)</label>
+        <input type="text" id="monthly-income" placeholder="50000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your gross monthly income</div>
+      </div>
+      <div class="form-col">
+        <label for="monthly-expenses">Monthly Expenses (₹)</label>
+        <input type="text" id="monthly-expenses" placeholder="30000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your monthly expenses</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="existing-obligations">Existing EMI Obligations (₹)</label>
+        <input type="text" id="existing-obligations" placeholder="10000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Current loan EMIs</div>
+      </div>
+      <div class="form-col">
+        <label for="interest-rate">Interest Rate (%)</label>
+        <input type="text" id="interest-rate" placeholder="8.5" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Expected loan interest rate</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="loan-tenure">Loan Tenure (Years)</label>
+        <input type="text" id="loan-tenure" placeholder="20" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Desired loan duration</div>
+      </div>
+      <div class="form-col">
+        <label for="age">Your Age</label>
+        <input type="text" id="age" placeholder="30" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current age</div>
+      </div>
+    </div>
+
+    <!-- Home Loan specific fields -->
+    <div id="home-loan-fields" style="display: block;">
+      <div class="form-row">
+        <div class="form-col">
+          <label for="property-cost">Property Cost (₹)</label>
+          <input type="text" id="property-cost" placeholder="5000000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Total cost of the property</div>
+        </div>
+        <div class="form-col">
+          <label for="down-payment">Down Payment (₹)</label>
+          <input type="text" id="down-payment" placeholder="1000000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Amount you can pay upfront</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Loan specific fields -->
+    <div id="car-loan-fields" style="display: none;">
+      <div class="form-row">
+        <div class="form-col">
+          <label for="car-cost">Car Cost (₹)</label>
+          <input type="text" id="car-cost" placeholder="800000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Total cost of the car</div>
+        </div>
+        <div class="form-col">
+          <label for="car-down-payment">Down Payment (₹)</label>
+          <input type="text" id="car-down-payment" placeholder="160000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Amount you can pay upfront</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="calculate-btn">Calculate Eligibility</button>
+      <button type="button" id="reset-btn" class="secondary-btn">Reset</button>
+      <button type="button" id="download-btn" class="secondary-btn">Download PDF</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <canvas id="eligibilityChart" width="400" height="300" style="max-width: 100%; margin: 20px 0;"></canvas>
+
+  <div class="content-section">
+    <h2>About Loan Eligibility</h2>
+    <p>Loan eligibility depends on your income, credit score, existing obligations, and the lender's policies. This calculator provides an estimate based on common eligibility criteria used by banks and financial institutions.</p>
+
+    <h3>Factors Affecting Loan Eligibility</h3>
+    <ul>
+      <li><strong>Income:</strong> Higher income generally means higher eligibility</li>
+      <li><strong>Credit Score:</strong> Good credit score improves chances and rates</li>
+      <li><strong>Debt-to-Income Ratio:</strong> Lower existing obligations improve eligibility</li>
+      <li><strong>Loan-to-Value Ratio:</strong> Down payment affects maximum loan amount</li>
+      <li><strong>Age:</strong> Maximum age at loan maturity affects tenure</li>
+    </ul>
+
+    <h3>Eligibility Criteria by Loan Type</h3>
+    <ul>
+      <li><strong>Home Loan:</strong> Up to 80-90% of property value, max tenure 30 years</li>
+      <li><strong>Personal Loan:</strong> Based on income and credit score, max tenure 5-7 years</li>
+      <li><strong>Car Loan:</strong> Up to 80-85% of car value, max tenure 7 years</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is the maximum loan amount I can get?</h3>
+      <p>The maximum loan amount depends on your income, existing obligations, and the loan type. This calculator estimates it based on EMI affordability.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How is loan eligibility calculated?</h3>
+      <p>Eligibility is calculated based on your debt-to-income ratio, EMI affordability, and lender-specific criteria. Banks typically allow 40-50% of income for EMIs.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is debt-to-income ratio?</h3>
+      <p>DTI ratio is the percentage of your income that goes towards debt payments. Lower DTI (typically under 40-50%) improves loan approval chances.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I get a loan if I have existing EMIs?</h3>
+      <p>Yes, but your existing EMIs will reduce the maximum loan amount you're eligible for. The total EMI should not exceed 40-50% of your income.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    © 2026 Upkarana Online Tools |
+    <a href="../about.html">About</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../contact.html">Contact</a>
+  </footer>
+
+</div>
+
+<script src="loan-eligibility-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wealth Goal Calculator – Plan to Achieve ₹1 Cr or ₹5 Cr</title>
+
+  <meta name="description"
+        content="Free Wealth Goal Calculator to plan your investments and achieve wealth goals like ₹1 Cr or ₹5 Cr. Calculate time to reach target or required monthly investment." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="wealth-goal-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Wealth Goal Calculator",
+        "item": "https://www.yoursite.com/calculators/wealth-goal-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can I achieve ₹1 Cr in investments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use this calculator to determine the monthly investment and time required based on expected returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the power of compounding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compounding allows your money to grow exponentially as interest earns interest over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to set realistic wealth goals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Assess your current savings, monthly surplus, risk tolerance, and expected returns to set achievable goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What rate of return should I assume?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For conservative estimates, use 6-8% for debt funds, 10-12% for equity, depending on your investment mix."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Wealth Goal Calculator</li>
+    </ol>
+  </nav>
+
+  <h1>Wealth Goal Calculator (₹1 Cr / ₹5 Cr)</h1>
+
+  <form class="form-group">
+    <div class="form-row">
+      <div class="form-col">
+        <label for="currentSavings">Current Savings/Investments (₹)</label>
+        <input type="text" id="currentSavings" placeholder="e.g., 50000">
+        <div class="help-text">Your existing corpus</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="monthlyInvestment">Monthly Investment (₹)</label>
+        <input type="text" id="monthlyInvestment" placeholder="e.g., 10000">
+        <div class="help-text">Amount you can invest monthly</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="annualReturn">Expected Annual Return (%)</label>
+        <input type="text" id="annualReturn" placeholder="e.g., 10">
+        <div class="help-text">Expected rate of return per annum</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="targetAmount">Target Amount (₹)</label>
+        <input type="text" id="targetAmount" placeholder="e.g., 10000000">
+        <div class="help-text">Goal like ₹1 Cr (10000000) or ₹5 Cr (50000000)</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateWealthGoal()">Calculate Time to Goal</button>
+      <button type="button" onclick="calculateRequiredInvestment()">Calculate Required Monthly Investment</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <div class="content-section">
+    <h2>About Wealth Building</h2>
+    <p>Achieving wealth goals like ₹1 Cr or ₹5 Cr requires consistent investing, understanding compounding, and realistic expectations. This calculator helps you plan your journey.</p>
+
+    <h3>Key Factors</h3>
+    <ul>
+      <li><strong>Starting Early:</strong> The earlier you start, the less you need to invest monthly.</li>
+      <li><strong>Power of Compounding:</strong> Returns on returns accelerate growth.</li>
+      <li><strong>Consistent Investing:</strong> Regular monthly investments build wealth steadily.</li>
+      <li><strong>Risk-Adjusted Returns:</strong> Higher returns come with higher risk.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How can I achieve ₹1 Cr in investments?</h3>
+      <p>Use this calculator to determine the monthly investment and time required based on expected returns.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the power of compounding?</h3>
+      <p>Compounding allows your money to grow exponentially as interest earns interest over time.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How to set realistic wealth goals?</h3>
+      <p>Assess your current savings, monthly surplus, risk tolerance, and expected returns to set achievable goals.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What rate of return should I assume?</h3>
+      <p>For conservative estimates, use 6-8% for debt funds, 10-12% for equity, depending on your investment mix.</p>
+    </div>
+  </div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+</div>
+
+<script src="wealth-goal-calculator.js"></script>
+</body>
+</html>

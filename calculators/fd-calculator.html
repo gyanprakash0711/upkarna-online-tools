@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FD Calculator – Calculate Fixed Deposit Maturity Amount</title>
+
+  <meta name="description"
+        content="Free FD Calculator to calculate fixed deposit maturity amount, total interest earned, and year-wise breakdown." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="fd-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://upkarna-online-tools.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://upkarna-online-tools.github.io/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FD Calculator",
+        "item": "https://upkarna-online-tools.github.io/calculators/fd-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an FD Calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An FD Calculator helps you calculate the maturity amount and interest earned on a Fixed Deposit based on principal, rate, tenure, and compounding frequency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is FD interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FD interest is calculated using compound interest formula: A = P(1 + r/n)^(nt), where A is maturity amount, P is principal, r is rate, n is compounding frequency, t is tenure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What compounding frequencies are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator supports annual, quarterly, monthly, and daily compounding frequencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are FD returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FD returns are guaranteed by banks up to Rs. 5 lakh under DICGC insurance. Always check current rates and terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses standard compound interest formulas and provides accurate estimates. Actual returns may vary based on bank policies."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">FD Calculator</span>
+  </nav>
+
+  <h1>FD Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="principal">Principal Amount (₹)</label>
+      <input type="text" id="principal" placeholder="e.g., 100000">
+      <small class="help-text">The amount you deposit.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 6">
+      <small class="help-text">The rate offered by the bank.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="tenure">Tenure (Years)</label>
+      <input type="text" id="tenure" placeholder="e.g., 5">
+      <small class="help-text">Duration of the FD.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="compounding">Compounding Frequency</label>
+      <select id="compounding">
+        <option value="12">Monthly</option>
+        <option value="4">Quarterly</option>
+        <option value="1">Annually</option>
+        <option value="365">Daily</option>
+      </select>
+      <small class="help-text">How often interest is compounded.</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateFD()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="fdChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="fdTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Principal (₹)</th>
+          <th>Interest Earned (₹)</th>
+          <th>Balance (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is a Fixed Deposit?</h2>
+    <p>A Fixed Deposit (FD) is a savings scheme offered by banks where you deposit a lump sum for a fixed period at a predetermined interest rate. It's a safe investment option with guaranteed returns.</p>
+
+    <h2>Benefits of FD</h2>
+    <ul>
+      <li>Guaranteed returns</li>
+      <li>Flexible tenure options</li>
+      <li>Higher interest rates than savings accounts</li>
+      <li>Low risk investment</li>
+    </ul>
+
+    <h2>How to Use This Calculator</h2>
+    <p>Enter your deposit amount, expected interest rate, tenure, and compounding frequency. The calculator will show maturity amount, total interest, and year-wise growth.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is an FD Calculator?</h3>
+      <p>An FD Calculator helps you calculate the maturity amount and interest earned on a Fixed Deposit based on principal, rate, tenure, and compounding frequency.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is FD interest calculated?</h3>
+      <p>FD interest is calculated using compound interest formula: A = P(1 + r/n)^(nt), where A is maturity amount, P is principal, r is rate, n is compounding frequency, t is tenure.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What compounding frequencies are supported?</h3>
+      <p>The calculator supports annual, quarterly, monthly, and daily compounding frequencies.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are FD returns guaranteed?</h3>
+      <p>FD returns are guaranteed by banks up to Rs. 5 lakh under DICGC insurance. Always check current rates and terms.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is this calculator?</h3>
+      <p>The calculator uses standard compound interest formulas and provides accurate estimates. Actual returns may vary based on bank policies.</p>
+    </div>
+  </section>
+
+  <p class="note">
+    Note: This calculator provides estimates based on compound interest formulas. Actual FD rates and terms may vary by bank.
+  </p>
+
+</div>
+
+<script src="fd-calculator.js"></script>
+</body>
+</html>

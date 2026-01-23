@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monthly Savings Planner – Plan Your Monthly Savings Goals</title>
+
+  <meta name="description"
+        content="Free Monthly Savings Planner to calculate how much to save monthly, track progress towards financial goals, and build wealth systematically." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="monthly-savings-planner.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Monthly Savings Planner",
+        "item": "https://www.yoursite.com/calculators/monthly-savings-planner.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much should I save monthly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aim to save 20-30% of your income. Use this planner to calculate based on your goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 50/30/20 rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "50% for needs, 30% for wants, 20% for savings and debt repayment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to track monthly savings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Set up automatic transfers, use budgeting apps, and review progress monthly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my expenses exceed income?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cut unnecessary expenses, increase income, or seek financial advice."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Monthly Savings Planner</span>
+  </nav>
+
+  <h1>Monthly Savings Planner</h1>
+
+  <form class="form-group">
+    <div class="form-row">
+      <div class="form-col">
+        <label for="monthlyIncome">Monthly Income (₹)</label>
+        <input type="text" id="monthlyIncome" placeholder="e.g., 50000">
+        <div class="help-text">Your total monthly earnings</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="monthlyExpenses">Monthly Expenses (₹)</label>
+        <input type="text" id="monthlyExpenses" placeholder="e.g., 35000">
+        <div class="help-text">Essential and discretionary expenses</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="savingsGoal">Savings Goal (₹)</label>
+        <input type="text" id="savingsGoal" placeholder="e.g., 100000">
+        <div class="help-text">Target amount to save</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="timeframe">Timeframe (Months)</label>
+        <input type="text" id="timeframe" placeholder="e.g., 12">
+        <div class="help-text">How many months to achieve the goal</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateSavingsPlan()">Calculate Savings Plan</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <div class="content-section">
+    <h2>About Monthly Savings Planning</h2>
+    <p>Consistent monthly savings is the foundation of financial security. This planner helps you determine how much to save monthly to reach your goals while maintaining a balanced budget.</p>
+
+    <h3>Savings Strategies</h3>
+    <ul>
+      <li><strong>Pay Yourself First:</strong> Save before spending on non-essentials.</li>
+      <li><strong>Automate Savings:</strong> Set up automatic transfers to savings accounts.</li>
+      <li><strong>Track Expenses:</strong> Monitor spending to identify areas for reduction.</li>
+      <li><strong>Increase Income:</strong> Look for side hustles or raises to boost savings.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How much should I save monthly?</h3>
+      <p>Aim to save 20-30% of your income. Use this planner to calculate based on your goals.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the 50/30/20 rule?</h3>
+      <p>50% for needs, 30% for wants, 20% for savings and debt repayment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How to track monthly savings?</h3>
+      <p>Set up automatic transfers, use budgeting apps, and review progress monthly.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if my expenses exceed income?</h3>
+      <p>Cut unnecessary expenses, increase income, or seek financial advice.</p>
+    </div>
+  </div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+</div>
+
+<script src="monthly-savings-planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mutual Fund Return Calculator – Calculate MF Returns | Upkarana Online Tools</title>
+  <meta name="description" content="Calculate mutual fund returns with SIP and lumpsum investments. Compare different schemes and track your portfolio performance with our free MF return calculator." />
+  <meta name="keywords" content="mutual fund return calculator, MF calculator, SIP returns, lumpsum returns, portfolio calculator" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="mutual-fund-return-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Mutual Fund Return Calculator",
+        "item": "https://www.yoursite.com/calculators/mutual-fund-return-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mutual Fund Return Calculator",
+    "description": "Calculate mutual fund returns for SIP and lumpsum investments",
+    "url": "https://www.yoursite.com/calculators/mutual-fund-return-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SIP in mutual funds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SIP (Systematic Investment Plan) is a method of investing a fixed amount regularly in mutual fund schemes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is mutual fund return calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mutual fund returns are calculated using compound interest formulas based on NAV, investment amount, and time period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between absolute and annualized returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolute returns show total percentage gain, while annualized returns show average yearly returns."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Mutual Fund Return Calculator</span>
+  </nav>
+
+  <h1>Mutual Fund Return Calculator</h1>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="mf-return-form" class="calculator-form">
+
+    <div class="form-group">
+      <label for="investment-type">Investment Type</label>
+      <select id="investment-type" onchange="toggleInvestmentFields()">
+        <option value="sip">SIP (Systematic Investment Plan)</option>
+        <option value="lumpsum">Lumpsum</option>
+      </select>
+    </div>
+
+    <div id="sip-fields">
+      <div class="form-row">
+        <div class="form-col">
+          <label for="monthly-investment">Monthly Investment (₹)</label>
+          <input type="text" id="monthly-investment" placeholder="5000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Amount you invest every month</div>
+        </div>
+        <div class="form-col">
+          <label for="investment-period">Investment Period (Years)</label>
+          <input type="text" id="investment-period" placeholder="10" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Total duration of investment</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lumpsum-fields" style="display: none;">
+      <div class="form-row">
+        <div class="form-col">
+          <label for="lumpsum-amount">Lumpsum Amount (₹)</label>
+          <input type="text" id="lumpsum-amount" placeholder="100000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">One-time investment amount</div>
+        </div>
+        <div class="form-col">
+          <label for="lumpsum-period">Investment Period (Years)</label>
+          <input type="text" id="lumpsum-period" placeholder="10" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Total duration of investment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="expected-return">Expected Annual Return (%)</label>
+        <input type="text" id="expected-return" placeholder="12" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Expected rate of return per year</div>
+      </div>
+      <div class="form-col">
+        <label for="inflation-rate">Inflation Rate (%)</label>
+        <input type="text" id="inflation-rate" placeholder="6" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Annual inflation rate (optional)</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="calculate-btn">Calculate Returns</button>
+      <button type="button" id="reset-btn" class="secondary-btn">Reset</button>
+      <button type="button" id="download-btn" class="secondary-btn">Download PDF</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <canvas id="returnChart" width="400" height="300" style="max-width: 100%; margin: 20px 0;"></canvas>
+
+  <div class="content-section">
+    <h2>About Mutual Fund Returns</h2>
+    <p>Mutual funds offer a way to invest in diversified portfolios managed by professionals. Returns can vary based on market conditions, fund performance, and investment strategy.</p>
+
+    <h3>Types of Mutual Fund Investments</h3>
+    <ul>
+      <li><strong>SIP (Systematic Investment Plan):</strong> Regular monthly investments that help in rupee-cost averaging</li>
+      <li><strong>Lumpsum:</strong> One-time investment, suitable when you have a large sum available</li>
+    </ul>
+
+    <h3>Factors Affecting Returns</h3>
+    <ul>
+      <li>Market performance and economic conditions</li>
+      <li>Fund manager's expertise and strategy</li>
+      <li>Expense ratio and other charges</li>
+      <li>Investment horizon and risk tolerance</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is a good return rate for mutual funds?</h3>
+      <p>Historically, equity-oriented mutual funds have delivered 10-15% annual returns over long periods. However, past performance doesn't guarantee future returns.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Should I choose SIP or lumpsum investment?</h3>
+      <p>SIP is ideal for regular investors as it reduces market timing risk. Lumpsum works well when you have surplus funds and believe in current market valuations.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How is inflation considered in calculations?</h3>
+      <p>The calculator shows both nominal returns (without inflation) and real returns (adjusted for inflation) to give you a complete picture of your investment's purchasing power.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What are the risks involved in mutual fund investments?</h3>
+      <p>Mutual funds carry market risk, credit risk, liquidity risk, and interest rate risk. The value of your investment can fluctuate based on market conditions.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    © 2026 Upkarana Online Tools |
+    <a href="../about.html">About</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../contact.html">Contact</a>
+  </footer>
+
+</div>
+
+<script src="mutual-fund-return-calculator.js"></script>
+
+</body>
+</html>

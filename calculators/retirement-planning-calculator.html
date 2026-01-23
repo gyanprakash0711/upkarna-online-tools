@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retirement Planning Calculator – Plan Your Retirement | Upkarana Online Tools</title>
+  <meta name="description" content="Plan your retirement with our comprehensive calculator. Calculate retirement corpus, monthly expenses, and investment requirements for a secure financial future." />
+  <meta name="keywords" content="retirement calculator, retirement planning, retirement corpus, pension calculator, financial planning" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="retirement-planning-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Retirement Planning Calculator",
+        "item": "https://www.yoursite.com/calculators/retirement-planning-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Retirement Planning Calculator",
+    "description": "Calculate retirement corpus and plan your financial future",
+    "url": "https://www.yoursite.com/calculators/retirement-planning-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much retirement corpus do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Retirement corpus depends on your desired monthly income, life expectancy, inflation, and expected returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 4% rule in retirement planning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 4% rule suggests you can withdraw 4% of your portfolio annually without running out of money."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate monthly retirement expenses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estimate your current expenses and adjust for inflation and lifestyle changes in retirement."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Retirement Planning Calculator</span>
+  </nav>
+
+  <h1>Retirement Planning Calculator</h1>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="retirement-form" class="calculator-form">
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="current-age">Current Age</label>
+        <input type="text" id="current-age" placeholder="30" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current age in years</div>
+      </div>
+      <div class="form-col">
+        <label for="retirement-age">Retirement Age</label>
+        <input type="text" id="retirement-age" placeholder="60" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Age at which you plan to retire</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="life-expectancy">Life Expectancy</label>
+        <input type="text" id="life-expectancy" placeholder="85" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Expected age till which you need funds</div>
+      </div>
+      <div class="form-col">
+        <label for="monthly-expenses">Current Monthly Expenses (₹)</label>
+        <input type="text" id="monthly-expenses" placeholder="50000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current monthly expenditure</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="inflation-rate">Expected Inflation Rate (%)</label>
+        <input type="text" id="inflation-rate" placeholder="6" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Annual inflation rate</div>
+      </div>
+      <div class="form-col">
+        <label for="expected-return">Expected Investment Return (%)</label>
+        <input type="text" id="expected-return" placeholder="8" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Annual return on investments</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="current-savings">Current Savings (₹)</label>
+        <input type="text" id="current-savings" placeholder="500000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Current investment corpus</div>
+      </div>
+      <div class="form-col">
+        <label for="monthly-savings">Monthly Savings (₹)</label>
+        <input type="text" id="monthly-savings" placeholder="25000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Amount you can save monthly</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="existing-pension">Existing Pension/Monthly Income (₹)</label>
+        <input type="text" id="existing-pension" placeholder="0" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Monthly income from pension/EPF etc.</div>
+      </div>
+      <div class="form-col">
+        <label for="retirement-expense-ratio">Retirement Expense Ratio (%)</label>
+        <input type="text" id="retirement-expense-ratio" placeholder="80" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Expenses in retirement as % of current</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="calculate-btn">Calculate Retirement Plan</button>
+      <button type="button" id="reset-btn" class="secondary-btn">Reset</button>
+      <button type="button" id="download-btn" class="secondary-btn">Download PDF</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <canvas id="retirementChart" width="400" height="300" style="max-width: 100%; margin: 20px 0;"></canvas>
+
+  <div class="content-section">
+    <h2>About Retirement Planning</h2>
+    <p>Retirement planning involves calculating how much money you need to save and invest to maintain your desired lifestyle after retirement. Key factors include inflation, investment returns, life expectancy, and retirement expenses.</p>
+
+    <h3>Key Components of Retirement Planning</h3>
+    <ul>
+      <li><strong>Retirement Corpus:</strong> The total amount needed at retirement</li>
+      <li><strong>Monthly Requirements:</strong> Funds needed each month during retirement</li>
+      <li><strong>Investment Strategy:</strong> How to grow your savings</li>
+      <li><strong>Inflation Protection:</strong> Ensuring purchasing power is maintained</li>
+    </ul>
+
+    <h3>Retirement Planning Tips</h3>
+    <ul>
+      <li>Start planning early to benefit from compounding</li>
+      <li>Consider inflation when estimating future expenses</li>
+      <li>Diversify investments across asset classes</li>
+      <li>Review and adjust your plan periodically</li>
+      <li>Factor in healthcare and emergency expenses</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>How much retirement corpus do I need?</h3>
+      <p>The required corpus depends on your monthly expenses, life expectancy, inflation rate, and expected returns. Use this calculator to get a personalized estimate.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the 4% rule in retirement planning?</h3>
+      <p>The 4% rule suggests that you can withdraw 4% of your retirement corpus annually, adjusted for inflation, with a high probability of funds lasting 30 years.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does inflation affect retirement planning?</h3>
+      <p>Inflation reduces the purchasing power of money over time. A 6% inflation rate means ₹1 lakh today will buy goods worth only ₹54,000 in 10 years.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Should I include existing pension in calculations?</h3>
+      <p>Yes, include all sources of retirement income like EPF, NPS, pension, rental income, etc., to get an accurate picture of your retirement needs.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    © 2026 Upkarana Online Tools |
+    <a href="../about.html">About</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../contact.html">Contact</a>
+  </footer>
+
+</div>
+
+<script src="retirement-planning-calculator.js"></script>
+
+</body>
+</html>

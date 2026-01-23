@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan Prepayment Foreclosure Calculator – Calculate Savings from Early Loan Repayment</title>
+
+  <meta name="description"
+        content="Free Loan Prepayment Foreclosure Calculator to calculate interest savings and benefits of paying off your loan early." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="loan-prepayment-foreclosure-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://upkarna-online-tools.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://upkarna-online-tools.github.io/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Loan Prepayment Foreclosure Calculator",
+        "item": "https://upkarna-online-tools.github.io/calculators/loan-prepayment-foreclosure-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is loan prepayment and foreclosure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Loan prepayment refers to paying off your loan before the scheduled tenure ends. Foreclosure is the process where the lender recovers the outstanding amount if you default, but in this context, it means early closure of the loan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does prepaying a loan save money?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prepaying reduces the principal amount faster, which means less interest accrues over time. Our calculator shows the exact savings in interest payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there penalties for prepaying loans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some loans have prepayment penalties. This calculator assumes no penalties; consult your lender for actual terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What inputs do I need for the calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need loan amount, interest rate, tenure in years, months until prepayment, and prepayment amount."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses standard EMI formulas and is accurate for loans without additional fees or variable rates."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Loan Prepayment Foreclosure Calculator</span>
+  </nav>
+
+  <h1>Loan Prepayment Foreclosure Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-section">
+      <label for="loanAmount">Loan Amount (₹)</label>
+      <input type="text" id="loanAmount" placeholder="e.g., 500000">
+      <span class="help-text">The total amount borrowed.</span>
+
+      <label for="interestRate">Annual Interest Rate (%)</label>
+      <input type="text" id="interestRate" placeholder="e.g., 10">
+      <span class="help-text">The rate at which interest is charged.</span>
+
+      <label for="tenure">Loan Tenure (Years)</label>
+      <input type="text" id="tenure" placeholder="e.g., 20">
+      <span class="help-text">Original duration of the loan.</span>
+    </div>
+
+    <div class="form-section">
+      <label for="prepayMonths">Months Until Prepayment</label>
+      <input type="text" id="prepayMonths" placeholder="e.g., 60">
+      <span class="help-text">Number of months before making prepayment.</span>
+
+      <label for="prepayAmount">Prepayment Amount (₹)</label>
+      <input type="text" id="prepayAmount" placeholder="e.g., 100000">
+      <span class="help-text">Amount you plan to prepay.</span>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculatePrepayment()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="prepaymentChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="prepaymentTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>EMI (₹)</th>
+          <th>Principal Paid (₹)</th>
+          <th>Interest Paid (₹)</th>
+          <th>Outstanding Balance (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Loan Prepayment?</h2>
+    <p>Loan prepayment allows you to pay off your loan earlier than scheduled, potentially saving thousands in interest. Our calculator helps you understand the financial impact.</p>
+
+    <h2>Benefits of Prepaying Loans</h2>
+    <ul>
+      <li>Reduce total interest paid</li>
+      <li>Shorten loan tenure</li>
+      <li>Improve financial health</li>
+      <li>Free up future cash flow</li>
+    </ul>
+
+    <h2>How to Use This Calculator</h2>
+    <p>Enter your loan details and prepayment information. The calculator will show original vs. revised payment schedules and savings.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is loan prepayment and foreclosure?</h3>
+      <p>Loan prepayment refers to paying off your loan before the scheduled tenure ends. Foreclosure is the process where the lender recovers the outstanding amount if you default, but in this context, it means early closure of the loan.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does prepaying a loan save money?</h3>
+      <p>Prepaying reduces the principal amount faster, which means less interest accrues over time. Our calculator shows the exact savings in interest payments.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are there penalties for prepaying loans?</h3>
+      <p>Some loans have prepayment penalties. This calculator assumes no penalties; consult your lender for actual terms.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What inputs do I need for the calculator?</h3>
+      <p>You need loan amount, interest rate, tenure in years, months until prepayment, and prepayment amount.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is this calculator?</h3>
+      <p>The calculator uses standard EMI formulas and is accurate for loans without additional fees or variable rates.</p>
+    </div>
+  </section>
+
+  <p class="note">
+    Note: This calculator provides estimates based on standard loan formulas. Actual savings may vary based on lender terms and fees.
+  </p>
+
+</div>
+
+<script src="loan-prepayment-foreclosure-calculator.js"></script>
+</body>
+</html>

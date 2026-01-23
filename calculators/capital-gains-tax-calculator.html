@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capital Gains Tax Calculator – Calculate Tax on Capital Gains</title>
+
+  <meta name="description"
+        content="Free Capital Gains Tax Calculator to calculate tax on short-term and long-term capital gains from investments in India." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="capital-gains-tax-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Capital Gains Tax Calculator",
+        "item": "https://www.yoursite.com/calculators/capital-gains-tax-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is capital gains tax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Capital gains tax is levied on the profit from the sale of assets like stocks, property, etc."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between short-term and long-term capital gains?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Short-term if held less than 3 years for equity, taxed at 15%. Long-term if held more than 3 years, taxed at 10% above ₹1 lakh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to calculate capital gains tax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subtract purchase price from sale price, apply indexation for long-term, then apply tax rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is indexation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Indexation adjusts purchase price for inflation using cost inflation index."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Capital Gains Tax Calculator</span>
+  </nav>
+
+  <h1>Capital Gains Tax Calculator</h1>
+
+  <form class="form-group">
+    <div class="form-row">
+      <div class="form-col">
+        <label for="purchasePrice">Purchase Price (₹)</label>
+        <input type="text" id="purchasePrice" placeholder="e.g., 100000">
+        <div class="help-text">Cost of acquisition</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="salePrice">Sale Price (₹)</label>
+        <input type="text" id="salePrice" placeholder="e.g., 150000">
+        <div class="help-text">Sale proceeds</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="holdingPeriod">Holding Period (Years)</label>
+        <input type="text" id="holdingPeriod" placeholder="e.g., 2">
+        <div class="help-text">Years held before sale</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="assetType">Asset Type</label>
+        <select id="assetType">
+          <option value="equity">Equity (Stocks/Mutual Funds)</option>
+          <option value="debt">Debt (Bonds/FDs)</option>
+          <option value="property">Property</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateCapitalGainsTax()">Calculate Tax</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <div class="content-section">
+    <h2>About Capital Gains Tax in India</h2>
+    <p>Capital gains tax is applicable on profits from sale of capital assets. Rates vary based on holding period and asset type.</p>
+
+    <h3>Tax Rates (FY 2023-24)</h3>
+    <ul>
+      <li><strong>Short-term Capital Gains (STCG):</strong> Held ≤ 3 years (equity), ≤ 3 years (debt/property) - Taxed at slab rates</li>
+      <li><strong>Long-term Capital Gains (LTCG):</strong> Held > 3 years - 10% above ₹1 lakh (equity), 20% with indexation (debt/property)</li>
+    </ul>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is capital gains tax?</h3>
+      <p>Capital gains tax is levied on the profit from the sale of assets like stocks, property, etc.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the difference between short-term and long-term capital gains?</h3>
+      <p>Short-term if held less than 3 years for equity, taxed at 15%. Long-term if held more than 3 years, taxed at 10% above ₹1 lakh.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How to calculate capital gains tax?</h3>
+      <p>Subtract purchase price from sale price, apply indexation for long-term, then apply tax rates.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is indexation?</h3>
+      <p>Indexation adjusts purchase price for inflation using cost inflation index.</p>
+    </div>
+  </div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+</div>
+
+<script src="capital-gains-tax-calculator.js"></script>
+</body>
+</html>

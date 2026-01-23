@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Net Worth Calculator – Calculate Your Financial Net Worth</title>
+
+  <meta name="description"
+        content="Free Net Worth Calculator to calculate your financial net worth by subtracting liabilities from assets." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="net-worth-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.yoursite.com/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Net Worth Calculator", "item": "https://www.yoursite.com/calculators/net-worth-calculator.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is net worth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Net worth is the value of all assets minus the value of all liabilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is calculating net worth important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps you understand your financial health and track progress over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator provides estimates based on the values you enter. Use accurate figures for best results."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Net Worth Calculator</span>
+  </nav>
+
+  <h1>Net Worth Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-section">
+      <h3>Assets</h3>
+      <div class="form-group">
+        <label>Cash & Savings (₹)</label>
+        <input type="text" id="cashSavings" placeholder="e.g. 50000">
+        <small class="help-text">Enter cash in bank and savings accounts.</small>
+      </div>
+      <div class="form-group">
+        <label>Investments (₹)</label>
+        <input type="text" id="investments" placeholder="e.g. 200000">
+        <small class="help-text">Enter value of stocks, mutual funds, etc.</small>
+      </div>
+      <div class="form-group">
+        <label>Real Estate (₹)</label>
+        <input type="text" id="realEstate" placeholder="e.g. 5000000">
+        <small class="help-text">Enter property value minus mortgage.</small>
+      </div>
+      <div class="form-group">
+        <label>Other Assets (₹)</label>
+        <input type="text" id="otherAssets" placeholder="e.g. 100000">
+        <small class="help-text">Enter vehicles, jewelry, etc.</small>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Liabilities</h3>
+      <div class="form-group">
+        <label>Credit Card Debt (₹)</label>
+        <input type="text" id="creditCardDebt" placeholder="e.g. 20000">
+        <small class="help-text">Enter outstanding credit card balances.</small>
+      </div>
+      <div class="form-group">
+        <label>Loans (₹)</label>
+        <input type="text" id="loans" placeholder="e.g. 1000000">
+        <small class="help-text">Enter personal, car, or other loans.</small>
+      </div>
+      <div class="form-group">
+        <label>Other Debts (₹)</label>
+        <input type="text" id="otherDebts" placeholder="e.g. 50000">
+        <small class="help-text">Enter any other outstanding debts.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateNetWorth()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="netWorthChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="netWorthTable">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Net Worth?</h2>
+    <p>
+      Net worth is a measure of your financial health. It's calculated by subtracting your total liabilities from your total assets.
+    </p>
+
+    <h2>Why Track Net Worth?</h2>
+    <ul>
+      <li>Monitor financial progress</li>
+      <li>Make informed financial decisions</li>
+      <li>Set financial goals</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>How often should I calculate net worth?</h3>
+    <p>Calculate it quarterly or annually to track changes.</p>
+
+    <h3>What if my net worth is negative?</h3>
+    <p>A negative net worth means liabilities exceed assets. Focus on debt reduction.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    Net worth calculations are for informational purposes. Consult a financial advisor for personalized advice.
+  </p>
+
+</div>
+
+<script src="net-worth-calculator.js"></script>
+</body>
+</html>

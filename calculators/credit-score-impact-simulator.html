@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Credit Score Impact Simulator – Simulate Credit Score Changes | Upkarana Online Tools</title>
+  <meta name="description" content="Simulate how different financial actions affect your credit score. See the impact of payments, new loans, and credit utilization on your CIBIL score." />
+  <meta name="keywords" content="credit score simulator, CIBIL score, credit score impact, credit utilization, payment history, credit score calculator" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="credit-score-impact-simulator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Credit Score Impact Simulator",
+        "item": "https://www.yoursite.com/calculators/credit-score-impact-simulator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Credit Score Impact Simulator",
+    "description": "Simulate how financial actions affect your credit score",
+    "url": "https://www.yoursite.com/calculators/credit-score-impact-simulator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to improve credit score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Credit score changes can be seen within days for positive actions like payments, but significant improvements take 3-6 months of consistent good financial behavior."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What hurts credit score the most?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Late payments, high credit utilization (>70%), too many credit inquiries, and account closures can significantly hurt your credit score."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I check my credit score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check your credit score once every 3-6 months. Free annual reports are available from CIBIL. Avoid checking too frequently as some bureaus count soft inquiries."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Credit Score Impact Simulator</span>
+  </nav>
+
+  <h1>Credit Score Impact Simulator</h1>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="credit-score-form" class="calculator-form">
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="current-score">Current Credit Score</label>
+        <input type="text" id="current-score" placeholder="750" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current CIBIL score (300-900)</div>
+      </div>
+      <div class="form-col">
+        <label for="credit-limit">Total Credit Limit (₹)</label>
+        <input type="text" id="credit-limit" placeholder="500000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Total credit limit across all cards</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="current-utilization">Current Utilization (₹)</label>
+        <input type="text" id="current-utilization" placeholder="50000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Current outstanding balance</div>
+      </div>
+      <div class="form-col">
+        <label for="payment-history">Payment History (Months)</label>
+        <select id="payment-history">
+          <option value="perfect">Perfect (100% on-time)</option>
+          <option value="good">Good (95% on-time)</option>
+          <option value="average">Average (85% on-time)</option>
+          <option value="poor">Poor (70% on-time)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="credit-age">Average Credit Age (Years)</label>
+        <input type="text" id="credit-age" placeholder="5" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Average age of your credit accounts</div>
+      </div>
+      <div class="form-col">
+        <label for="new-inquiries">New Credit Inquiries (Last 6 months)</label>
+        <input type="text" id="new-inquiries" placeholder="0" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Number of new credit applications</div>
+      </div>
+    </div>
+
+    <div class="scenario-section">
+      <h3>Simulate Scenario</h3>
+
+      <div class="form-row">
+        <div class="form-col">
+          <label for="scenario-type">Action Type</label>
+          <select id="scenario-type" onchange="updateScenarioFields()">
+            <option value="payment">Make Payment</option>
+            <option value="new-loan">Apply for New Loan/Credit Card</option>
+            <option value="miss-payment">Miss Payment</option>
+            <option value="increase-limit">Credit Limit Increase</option>
+            <option value="pay-off">Pay Off Debt</option>
+          </select>
+        </div>
+        <div class="form-col">
+          <label for="scenario-amount">Amount (₹)</label>
+          <input type="text" id="scenario-amount" placeholder="10000" oninput="allowOnlyNumbers(this)">
+          <div class="help-text">Amount for the selected action</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="calculate-btn">Simulate Impact</button>
+      <button type="button" id="reset-btn" class="secondary-btn">Reset</button>
+      <button type="button" id="download-btn" class="secondary-btn">Download PDF</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <canvas id="scoreChart" width="400" height="300" style="max-width: 100%; margin: 20px 0;"></canvas>
+
+  <div class="content-section">
+    <h2>About Credit Score</h2>
+    <p>Your credit score is a numerical representation of your creditworthiness. In India, CIBIL scores range from 300 to 900, with higher scores indicating better credit health.</p>
+
+    <h3>Factors Affecting Credit Score</h3>
+    <ul>
+      <li><strong>Payment History (35%):</strong> Timely payments boost score</li>
+      <li><strong>Credit Utilization (30%):</strong> Keep balance below 30% of limit</li>
+      <li><strong>Credit Age (15%):</strong> Longer credit history is better</li>
+      <li><strong>New Credit (10%):</strong> Too many inquiries hurt score</li>
+      <li><strong>Credit Mix (10%):</strong> Different types of credit accounts</li>
+    </ul>
+
+    <h3>Credit Score Ranges</h3>
+    <ul>
+      <li><strong>Excellent (800-900):</strong> Best rates and terms</li>
+      <li><strong>Very Good (740-799):</strong> Good approval chances</li>
+      <li><strong>Good (670-739):</strong> Average approval chances</li>
+      <li><strong>Fair (580-669):</strong> Limited approval, higher rates</li>
+      <li><strong>Poor (300-579):</strong> Difficult to get credit</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>How long does it take to improve credit score?</h3>
+      <p>Credit score changes can be seen within days for positive actions like payments, but significant improvements take 3-6 months of consistent good financial behavior.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What hurts credit score the most?</h3>
+      <p>Late payments, high credit utilization (>70%), too many credit inquiries, and account closures can significantly hurt your credit score.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How often should I check my credit score?</h3>
+      <p>Check your credit score once every 3-6 months. Free annual reports are available from CIBIL. Avoid checking too frequently as some bureaus count soft inquiries.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I improve my credit score quickly?</h3>
+      <p>Yes, paying down credit card balances, making all payments on time, and avoiding new credit applications can improve your score within 30-60 days.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    © 2026 Upkarana Online Tools |
+    <a href="../about.html">About</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../contact.html">Contact</a>
+  </footer>
+
+</div>
+
+<script src="credit-score-impact-simulator.js"></script>
+
+</body>
+</html>

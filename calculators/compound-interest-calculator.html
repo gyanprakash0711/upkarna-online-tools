@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compound Interest Calculator – Investment Growth Calculator</title>
+
+  <meta name="description" content="Free Compound Interest Calculator to calculate investment growth, interest earned and year-wise returns." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="compound-interest-calculator.css">
+
+  <!-- 🔹 AdSense auto script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Compound Interest Calculator",
+        "item": "https://www.yoursite.com/calculators/compound-interest-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is compound interest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compound interest is interest calculated on the principal as well as previously earned interest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is compound interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is calculated using the formula A = P (1 + r/n)^(nt)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This calculator provides accurate estimates, but actual returns may vary."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Compound Interest Calculator</span>
+  </nav>
+
+  <h1>Compound Interest Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Initial Investment (₹)</label>
+      <input type="text" id="principal" placeholder="e.g. 100000">
+      <small class="help-text">Enter the initial amount invested (e.g., 100000 for ₹1,00,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g. 10">
+      <small class="help-text">Enter the annual interest rate (e.g., 10 for 10%).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Time Period (Years)</label>
+      <input type="text" id="time" placeholder="e.g. 5">
+      <small class="help-text">Enter the investment duration in years (e.g., 5 for 5 years).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Compounding Frequency</label>
+      <select id="frequency">
+        <option value="1">Yearly</option>
+        <option value="2">Half-Yearly</option>
+        <option value="4">Quarterly</option>
+        <option value="12" selected>Monthly</option>
+      </select>
+      <small class="help-text">Select how often interest is compounded.</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateCI()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- 🔹 HIGH RPM AD SLOT (AFTER RESULT) -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="growthChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="growthTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Investment Value (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- SEO + FAQ -->
+  <section class="content-section">
+    <h2>What is Compound Interest?</h2>
+    <p>
+      Compound interest helps your investment grow faster by earning interest on interest.
+    </p>
+
+    <h2>Who Should Use This Calculator?</h2>
+    <ul>
+      <li>Long-term investors</li>
+      <li>Mutual fund investors</li>
+      <li>Students learning finance</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is compound interest better than simple interest?</h3>
+    <p>Yes, compound interest generates higher returns over time.</p>
+
+    <h3>Does compounding frequency matter?</h3>
+    <p>Yes, more frequent compounding results in higher returns.</p>
+  </section>
+
+  <!-- 🔹 CONTENT BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    This calculator provides estimated results. Actual returns may vary.
+  </p>
+
+</div>
+
+<script src="compound-interest-calculator.js"></script>
+</body>
+</html>

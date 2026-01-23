@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Break-Even Investment Calculator – Calculate Investment Break-Even Point</title>
+  <meta name="description" content="Free Break-Even Investment Calculator to calculate when your investment will break even. Find out how long it takes to recover your initial investment amount." />
+  <meta name="keywords" content="break even calculator, investment break even, return on investment, break even analysis, investment recovery" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="break-even-investment-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Break-Even Investment Calculator",
+        "item": "https://www.yoursite.com/calculators/break-even-investment-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Break-Even Investment Calculator",
+    "description": "Calculate when your investment will break even and recover the initial amount",
+    "url": "https://www.yoursite.com/calculators/break-even-investment-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is break-even in investing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even in investing is the point where your investment returns equal your initial investment amount, meaning you've recovered your principal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is break-even calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even is calculated using compound interest formulas where future value equals initial investment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is break-even analysis important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even analysis helps investors understand the time required to recover their investment and make informed decisions about risk and returns."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Break-Even Investment Calculator</span>
+  </nav>
+
+  <h1>Break-Even Investment Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="initial-investment">Initial Investment Amount (₹)</label>
+      <input type="text" id="initial-investment" placeholder="e.g., 100000" />
+      <small class="help-text">Enter the amount you initially invested</small>
+    </div>
+    <div class="form-group">
+      <label for="expected-return">Expected Annual Return (%)</label>
+      <input type="text" id="expected-return" placeholder="e.g., 12" />
+      <small class="help-text">Expected annual return rate (e.g., 12 for 12%)</small>
+    </div>
+    <div class="form-group">
+      <label for="analysis-type">Analysis Type</label>
+      <select id="analysis-type">
+        <option value="time-to-break-even">Calculate Time to Break Even</option>
+        <option value="required-return">Calculate Required Return Rate</option>
+      </select>
+      <small class="help-text">Choose what you want to calculate</small>
+    </div>
+    <div class="form-group" id="time-group">
+      <label for="time-period">Time Period (Years)</label>
+      <input type="text" id="time-period" placeholder="e.g., 5" />
+      <small class="help-text">Number of years to analyze</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" onclick="calculateBreakEven()">Calculate Break-Even</button>
+    <button type="button" onclick="resetForm()">Reset</button>
+  </div>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <!-- 🔹 AD SLOT – AFTER RESULT (BEST RPM) -->
+  <div class="ads">
+    Ad Space
+    <!-- Replace with AdSense INS code after approval -->
+  </div>
+
+  <!-- SEO CONTENT + FAQ -->
+  <section class="content-section">
+
+    <h2>What is Break-Even Investment Analysis?</h2>
+    <p>
+      Break-even analysis in investing helps you determine when your investment will recover its initial cost. This calculator shows you exactly how long it takes for your investment to break even based on expected returns.
+    </p>
+
+    <h2>Who Should Use This Calculator?</h2>
+    <ul>
+      <li>Individual investors planning new investments</li>
+      <li>Business owners evaluating investment opportunities</li>
+      <li>Anyone wanting to understand investment recovery time</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What is break-even in investing?</h3>
+    <p>
+      Break-even in investing is the point where your investment returns equal your initial investment amount, meaning you've recovered your principal.
+    </p>
+
+    <h3>How is break-even calculated?</h3>
+    <p>
+      Break-even is calculated using compound interest formulas where future value equals initial investment.
+    </p>
+
+    <h3>Why is break-even analysis important?</h3>
+    <p>
+      Break-even analysis helps investors understand the time required to recover their investment and make informed decisions about risk and returns.
+    </p>
+
+  </section>
+
+  <!-- 🔹 AD SLOT – CONTENT BREAK -->
+  <div class="ads">
+    Ad Space
+  </div>
+
+  <p class="note">
+    Results are indicative based on assumed constant returns. Actual investment performance may vary.
+  </p>
+
+</div>
+
+<script src="break-even-investment-calculator.js"></script>
+
+</body>
+</html>

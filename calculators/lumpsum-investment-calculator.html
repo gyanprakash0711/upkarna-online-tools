@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lumpsum Investment Calculator – Calculate Future Value of Lump Sum Investment</title>
+
+  <meta name="description"
+        content="Free Lumpsum Investment Calculator to calculate the future value of your lump sum investment with compound interest." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="lumpsum-investment-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.yoursite.com/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Lumpsum Investment Calculator", "item": "https://www.yoursite.com/calculators/lumpsum-investment-calculator.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to calculate lumpsum investment returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the formula: Future Value = Principal × (1 + Rate/100)^Years. Our calculator does this automatically with year-by-year breakdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the advantages of lumpsum investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lumpsum investments can benefit from market timing, potentially higher returns in bull markets, and simpler management compared to periodic investments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I choose lumpsum over SIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choose lumpsum if you have a large sum available and believe the market will rise. SIP is better for disciplined investing and averaging out market volatility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between lumpsum and SIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lumpsum is one-time investment, SIP is periodic. Lumpsum may give higher returns in rising markets, SIP reduces risk through rupee-cost averaging."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Lumpsum Investment Calculator</span>
+  </nav>
+
+  <h1>Lumpsum Investment Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-section">
+      <label for="principal">Principal Amount (₹)</label>
+      <input type="text" id="principal" placeholder="e.g., 100000">
+      <span class="help-text">The initial amount you are investing.</span>
+
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 8">
+      <span class="help-text">Expected annual return rate.</span>
+
+      <label for="years">Investment Period (Years)</label>
+      <input type="text" id="years" placeholder="e.g., 10">
+      <span class="help-text">Number of years the money will be invested.</span>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateLumpsum()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="lumpsumChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="lumpsumTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Principal (₹)</th>
+          <th>Interest Earned (₹)</th>
+          <th>Total Value (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Lumpsum Investment?</h2>
+    <p>
+      A lumpsum investment involves investing a large sum of money at once, rather than spreading it out over time through periodic investments like Systematic Investment Plans (SIPs). This approach can be beneficial in certain market conditions.
+    </p>
+
+    <h2>How Lumpsum Calculator Works</h2>
+    <p>
+      Our calculator uses the compound interest formula to project the future value of your investment. It assumes the interest is compounded annually and shows year-by-year growth.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>How to calculate lumpsum investment returns?</h3>
+    <p>Use the formula: Future Value = Principal × (1 + Rate/100)^Years. Our calculator does this automatically with year-by-year breakdown.</p>
+
+    <h3>What are the advantages of lumpsum investment?</h3>
+    <p>Lumpsum investments can benefit from market timing, potentially higher returns in bull markets, and simpler management compared to periodic investments.</p>
+
+    <h3>When should I choose lumpsum over SIP?</h3>
+    <p>Choose lumpsum if you have a large sum available and believe the market will rise. SIP is better for disciplined investing and averaging out market volatility.</p>
+
+    <h3>What is the difference between lumpsum and SIP?</h3>
+    <p>Lumpsum is one-time investment, SIP is periodic. Lumpsum may give higher returns in rising markets, SIP reduces risk through rupee-cost averaging.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    Investment projections are estimates based on assumed rates. Actual returns may vary. Consult a financial advisor for personalized advice.
+  </p>
+
+</div>
+
+<script src="lumpsum-investment-calculator.js"></script>
+</body>
+</html>

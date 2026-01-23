@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>EMI Calculator – Loan EMI Calculator Online</title>
+  <meta name="description" content="Free EMI Calculator to calculate loan EMI, total interest and total payment for home, car and personal loans." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="emi-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "EMI Calculator",
+        "item": "https://www.yoursite.com/calculators/emi-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is EMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EMI stands for Equated Monthly Installment. It is the fixed monthly amount paid towards a loan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is EMI calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EMI is calculated using loan amount, interest rate and loan tenure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this EMI calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This calculator gives accurate estimates, but final EMI may vary by lender."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">EMI Calculator</span>
+  </nav>
+
+  <h1>EMI Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Loan Amount (₹)</label>
+      <input type="text" id="loanAmount" placeholder="e.g. 500000">
+      <small class="help-text">Enter the total loan amount (e.g., 500000 for ₹5,00,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Interest Rate (%)</label>
+      <input type="text" id="interestRate" placeholder="e.g. 8.5">
+      <small class="help-text">Enter the annual interest rate (e.g., 8.5 for 8.5%).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Loan Tenure (Years)</label>
+      <input type="text" id="loanTenure" placeholder="e.g. 20">
+      <small class="help-text">Enter the loan duration in years (e.g., 20 for 20 years).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateEMI()">Calculate EMI</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- 🔹 AD SLOT – AFTER RESULT (BEST RPM) -->
+  <div class="ads">
+    Ad Space
+    <!-- Replace with AdSense INS code after approval -->
+  </div>
+
+  <!-- SEO CONTENT + FAQ -->
+  <section class="content-section">
+
+    <h2>What is EMI?</h2>
+    <p>
+      EMI stands for Equated Monthly Installment. It is the fixed amount you pay every month towards loan repayment.
+    </p>
+
+    <h2>Who Should Use This EMI Calculator?</h2>
+    <ul>
+      <li>Home loan borrowers</li>
+      <li>Car loan applicants</li>
+      <li>Personal loan users</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Does EMI remain constant?</h3>
+    <p>
+      EMI remains constant for fixed-rate loans and may change for floating-rate loans.
+    </p>
+
+    <h3>Can I reduce EMI?</h3>
+    <p>
+      Yes, by increasing tenure or making prepayments.
+    </p>
+
+  </section>
+
+  <!-- 🔹 AD SLOT – CONTENT BREAK -->
+  <div class="ads">
+    Ad Space
+  </div>
+
+  <p class="note">
+    Results are indicative. Actual EMI may vary based on bank policies.
+  </p>
+
+</div>
+
+<script src="emi-calculator.js"></script>
+</body>
+</html>

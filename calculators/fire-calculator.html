@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FIRE Calculator – Financial Independence Retire Early | Upkarana Online Tools</title>
+  <meta name="description" content="Calculate your path to Financial Independence Retire Early (FIRE). Determine your FIRE number, savings rate, and timeline to achieve financial freedom." />
+  <meta name="keywords" content="FIRE calculator, financial independence, retire early, FIRE number, passive income, financial freedom" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="fire-calculator.css">
+
+  <!-- 🔹 ADSENSE AUTO SCRIPT (ADD AFTER APPROVAL) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="ca-pub-XXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FIRE Calculator",
+        "item": "https://www.yoursite.com/calculators/fire-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Calculator Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FIRE Calculator",
+    "description": "Calculate your path to Financial Independence Retire Early",
+    "url": "https://www.yoursite.com/calculators/fire-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is FIRE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FIRE stands for Financial Independence Retire Early. It means having enough savings to cover living expenses without working."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 4% rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 4% rule suggests you can withdraw 4% of your portfolio annually in retirement without running out of money."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my FIRE number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your FIRE number is 25 times your annual expenses (based on the 4% rule)."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">FIRE Calculator</span>
+  </nav>
+
+  <h1>FIRE Calculator</h1>
+  <p class="subtitle">Financial Independence Retire Early</p>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="fire-form" class="calculator-form">
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="annual-expenses">Annual Expenses (₹)</label>
+        <input type="text" id="annual-expenses" placeholder="600000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your annual living expenses</div>
+      </div>
+      <div class="form-col">
+        <label for="current-age">Current Age</label>
+        <input type="text" id="current-age" placeholder="30" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current age</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="current-savings">Current Savings (₹)</label>
+        <input type="text" id="current-savings" placeholder="1000000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Your current investment portfolio</div>
+      </div>
+      <div class="form-col">
+        <label for="monthly-savings">Monthly Savings (₹)</label>
+        <input type="text" id="monthly-savings" placeholder="50000" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Amount you save monthly</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="expected-return">Expected Annual Return (%)</label>
+        <input type="text" id="expected-return" placeholder="8" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Expected return on investments</div>
+      </div>
+      <div class="form-col">
+        <label for="safe-withdrawal-rate">Safe Withdrawal Rate (%)</label>
+        <input type="text" id="safe-withdrawal-rate" placeholder="4" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Safe withdrawal rate (typically 4%)</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="inflation-rate">Inflation Rate (%)</label>
+        <input type="text" id="inflation-rate" placeholder="6" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Annual inflation rate</div>
+      </div>
+      <div class="form-col">
+        <label for="target-fire-age">Target FIRE Age (Optional)</label>
+        <input type="text" id="target-fire-age" placeholder="45" oninput="allowOnlyNumbers(this)">
+        <div class="help-text">Desired age to achieve FIRE</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="calculate-btn">Calculate FIRE Plan</button>
+      <button type="button" id="reset-btn" class="secondary-btn">Reset</button>
+      <button type="button" id="download-btn" class="secondary-btn">Download PDF</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <canvas id="fireChart" width="400" height="300" style="max-width: 100%; margin: 20px 0;"></canvas>
+
+  <div class="content-section">
+    <h2>About FIRE (Financial Independence Retire Early)</h2>
+    <p>FIRE is a movement focused on achieving financial independence and retiring early. The core principle is to save aggressively, invest wisely, and live below your means to accumulate enough wealth to cover your expenses through passive income.</p>
+
+    <h3>FIRE Principles</h3>
+    <ul>
+      <li><strong>High Savings Rate:</strong> Save 50-70% of income</li>
+      <li><strong>Investment:</strong> Grow savings through compounding</li>
+      <li><strong>Frugal Living:</strong> Minimize expenses while building wealth</li>
+      <li><strong>Passive Income:</strong> Generate income without active work</li>
+    </ul>
+
+    <h3>Common FIRE Strategies</h3>
+    <ul>
+      <li><strong>Lean FIRE:</strong> Minimalist lifestyle, lower expense target</li>
+      <li><strong>Fat FIRE:</strong> Comfortable lifestyle, higher expense target</li>
+      <li><strong>Barista FIRE:</strong> Part-time work with passive income</li>
+      <li><strong>Coast FIRE:</strong> Stop saving but let investments grow</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is the 4% rule in FIRE?</h3>
+      <p>The 4% rule suggests you can withdraw 4% of your portfolio annually, adjusted for inflation, with a high probability of your money lasting 30+ years.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much is my FIRE number?</h3>
+      <p>Your FIRE number is your annual expenses multiplied by 25 (for 4% withdrawal rate). For example, ₹6 lakh annual expenses = ₹1.5 crore FIRE number.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What savings rate do I need for FIRE?</h3>
+      <p>The savings rate depends on your timeline. For FIRE in 10 years, you might need 60-70% savings rate. For 20 years, 40-50% might suffice.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is FIRE realistic in India?</h3>
+      <p>Yes, FIRE is achievable in India with disciplined saving, smart investing, and lifestyle optimization. Many Indians have successfully achieved FIRE.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    © 2026 Upkarana Online Tools |
+    <a href="../about.html">About</a> |
+    <a href="../privacy-policy.html">Privacy Policy</a> |
+    <a href="../contact.html">Contact</a>
+  </footer>
+
+</div>
+
+<script src="fire-calculator.js"></script>
+
+</body>
+</html>

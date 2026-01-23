@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PPF Maturity Calculator – Calculate Public Provident Fund Maturity Amount</title>
+
+  <meta name="description"
+        content="Free PPF Maturity Calculator to calculate Public Provident Fund maturity amount, total interest earned, and year-wise breakdown." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="ppf-maturity-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://upkarna-online-tools.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://upkarna-online-tools.github.io/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "PPF Maturity Calculator",
+        "item": "https://upkarna-online-tools.github.io/calculators/ppf-maturity-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a PPF Maturity Calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A PPF Maturity Calculator helps you calculate the maturity amount and interest earned on a Public Provident Fund account based on annual deposit, rate, and tenure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is PPF interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PPF interest is calculated annually on the balance at the end of each year. Deposits are made annually, and interest is compounded yearly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum and maximum tenure for PPF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PPF has a minimum tenure of 15 years and can be extended in blocks of 5 years up to 50 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are PPF returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, PPF returns are guaranteed by the Government of India. The interest rate is notified annually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses standard PPF calculation formulas and provides accurate estimates based on the entered parameters."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">PPF Maturity Calculator</span>
+  </nav>
+
+  <h1>PPF Maturity Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="annualDeposit">Annual Deposit Amount (₹)</label>
+      <input type="text" id="annualDeposit" placeholder="e.g., 50000">
+      <small class="help-text">The amount you deposit annually (min ₹500, max ₹1,50,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 7.1">
+      <small class="help-text">The current PPF interest rate (government notified).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="tenure">Tenure (Years)</label>
+      <input type="text" id="tenure" placeholder="e.g., 15">
+      <small class="help-text">Duration of the PPF account (15-50 years).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculatePPF()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="ppfChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="ppfTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Deposit (₹)</th>
+          <th>Interest Earned (₹)</th>
+          <th>Balance (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Public Provident Fund (PPF)?</h2>
+    <p>PPF is a long-term savings scheme offered by the Government of India through post offices and banks. It offers guaranteed returns and tax benefits under Section 80C.</p>
+
+    <h2>Benefits of PPF</h2>
+    <ul>
+      <li>Guaranteed returns</li>
+      <li>Tax exemption on deposit and interest</li>
+      <li>Flexible annual deposits</li>
+      <li>Safe government-backed scheme</li>
+    </ul>
+
+    <h2>How to Use This Calculator</h2>
+    <p>Enter your annual deposit, expected interest rate, and tenure. The calculator will show maturity amount, total interest, and year-wise growth.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is a PPF Maturity Calculator?</h3>
+      <p>A PPF Maturity Calculator helps you calculate the maturity amount and interest earned on a Public Provident Fund account based on annual deposit, rate, and tenure.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is PPF interest calculated?</h3>
+      <p>PPF interest is calculated annually on the balance at the end of each year. Deposits are made annually, and interest is compounded yearly.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the minimum and maximum tenure for PPF?</h3>
+      <p>PPF has a minimum tenure of 15 years and can be extended in blocks of 5 years up to 50 years.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are PPF returns guaranteed?</h3>
+      <p>Yes, PPF returns are guaranteed by the Government of India. The interest rate is notified annually.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is this calculator?</h3>
+      <p>The calculator uses standard PPF calculation formulas and provides accurate estimates based on the entered parameters.</p>
+    </div>
+  </section>
+
+  <p class="note">
+    Note: This calculator provides estimates based on PPF formulas. Actual rates and terms may vary as per government notifications.
+  </p>
+
+</div>
+
+<script src="ppf-maturity-calculator.js"></script>
+</body>
+</html>

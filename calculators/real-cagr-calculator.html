@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real CAGR Calculator – Calculate Compound Annual Growth Rate</title>
+
+  <meta name="description"
+        content="Free Real CAGR Calculator to calculate compound annual growth rate, investment returns, and growth over time." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="real-cagr-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.yoursite.com/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Real CAGR Calculator", "item": "https://www.yoursite.com/calculators/real-cagr-calculator.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CAGR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CAGR stands for Compound Annual Growth Rate, which measures the annual growth rate of an investment over a period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is CAGR calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CAGR is calculated using the formula: CAGR = (Ending Value / Beginning Value)^(1/Number of Periods) - 1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator provides accurate CAGR calculations based on the inputs provided. Actual investment returns may vary."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Real CAGR Calculator</span>
+  </nav>
+
+  <h1>Real CAGR Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Initial Investment (₹)</label>
+      <input type="text" id="initialInvestment" placeholder="e.g. 10000">
+      <small class="help-text">Enter the initial investment amount (e.g., 10000 for ₹10,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Final Value (₹)</label>
+      <input type="text" id="finalValue" placeholder="e.g. 20000">
+      <small class="help-text">Enter the final value after the investment period (e.g., 20000 for ₹20,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Investment Period (Years)</label>
+      <input type="text" id="years" placeholder="e.g. 5">
+      <small class="help-text">Enter the number of years the investment was held (e.g., 5 for 5 years).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateCAGR()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="growthChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="growthTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Value (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is CAGR?</h2>
+    <p>
+      CAGR, or Compound Annual Growth Rate, is the rate of return that would be required for an investment to grow from its beginning balance to its ending balance, assuming profits were reinvested at the end of each year.
+    </p>
+
+    <h2>Who Should Use CAGR Calculator?</h2>
+    <ul>
+      <li>Investors evaluating portfolio performance</li>
+      <li>Businesses analyzing revenue growth</li>
+      <li>Anyone comparing investment returns over time</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>What does CAGR tell you?</h3>
+    <p>CAGR provides a smoothed annual return rate, useful for comparing different investments.</p>
+
+    <h3>Is CAGR the same as annual return?</h3>
+    <p>No, CAGR is the geometric progression ratio that provides a constant rate of return over the time period.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    CAGR calculations are for informational purposes only and do not guarantee future performance.
+  </p>
+
+</div>
+
+<script src="real-cagr-calculator.js"></script>
+</body>
+</html>

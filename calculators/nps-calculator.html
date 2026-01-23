@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NPS Calculator – Calculate National Pension System Maturity Amount</title>
+
+  <meta name="description"
+        content="Free NPS Calculator to calculate National Pension System maturity amount, total contributions, and retirement corpus." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="nps-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://www.yoursite.com/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "NPS Calculator",
+        "item": "https://www.yoursite.com/calculators/nps-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is NPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "National Pension System (NPS) is a government-sponsored retirement savings scheme in India for all citizens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who can invest in NPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any Indian citizen between 18 and 65 years can invest in NPS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum investment in NPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum monthly contribution is ₹500, and annual contribution is ₹6,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the benefits of NPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NPS offers tax benefits under Section 80C, portability, and guaranteed pension after retirement."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">NPS Calculator</span>
+  </nav>
+
+  <h1>NPS Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="monthlyContribution">Monthly Contribution (₹)</label>
+      <input type="text" id="monthlyContribution" placeholder="e.g., 2000">
+      <small class="help-text">The amount you contribute monthly to NPS (min ₹500).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="currentAge">Current Age (Years)</label>
+      <input type="text" id="currentAge" placeholder="e.g., 30">
+      <small class="help-text">Your current age in years.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="retirementAge">Retirement Age (Years)</label>
+      <input type="text" id="retirementAge" placeholder="e.g., 60">
+      <small class="help-text">Age at which you plan to retire (60-70).</small>
+    </div>
+
+    <div class="form-group">
+      <label for="rate">Expected Annual Return (%)</label>
+      <input type="text" id="rate" placeholder="e.g., 10">
+      <small class="help-text">Expected rate of return (typically 8-12%).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateNPS()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <div class="content-section">
+    <h2>About NPS Calculator</h2>
+    <p>The National Pension System (NPS) is a voluntary retirement savings scheme launched by the Government of India. It allows individuals to build a retirement corpus through systematic investments. This calculator helps estimate your NPS maturity amount based on monthly contributions and expected returns.</p>
+
+    <h2>How NPS Works</h2>
+    <ul>
+      <li><strong>Contributions:</strong> Minimum ₹500 per month or ₹6,000 per year.</li>
+      <li><strong>Investment Options:</strong> Choose from Active Choice, Auto Choice, or Corporate Bond schemes.</li>
+      <li><strong>Tax Benefits:</strong> Contributions up to ₹1.5 lakh eligible under Section 80C.</li>
+      <li><strong>Withdrawal:</strong> 60% of corpus can be withdrawn as lump sum, remaining 40% for annuity.</li>
+    </ul>
+
+    <h2>Key Benefits</h2>
+    <ul>
+      <li>Low-cost investment option.</li>
+      <li>Portability across jobs.</li>
+      <li>Guaranteed minimum pension through annuity.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is NPS?</h3>
+      <p>National Pension System (NPS) is a government-sponsored retirement savings scheme in India for all citizens.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who can invest in NPS?</h3>
+      <p>Any Indian citizen between 18 and 65 years can invest in NPS.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the minimum investment in NPS?</h3>
+      <p>Minimum monthly contribution is ₹500, and annual contribution is ₹6,000.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are the benefits of NPS?</h3>
+      <p>NPS offers tax benefits under Section 80C, portability, and guaranteed pension after retirement.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <footer>
+    <p>&copy; 2024 Upkarana Online Tools. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+<script src="nps-calculator.js"></script>
+</body>
+</html>

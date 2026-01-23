@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step-Up SIP Calculator – Calculate SIP with Annual Increase</title>
+
+  <meta name="description"
+        content="Free Step-Up SIP Calculator to calculate SIP returns with yearly increment, maturity value, total investment and wealth gained." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="step-up-sip-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.yoursite.com/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Step-Up SIP Calculator", "item": "https://www.yoursite.com/calculators/step-up-sip-calculator.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Step-Up SIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Step-Up SIP allows you to increase your monthly SIP every year to match income growth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Step-Up SIP better than regular SIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Step-Up SIP generally creates a larger corpus over long-term investing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator provides close estimates. Actual returns depend on market performance."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Step-Up SIP Calculator</span>
+  </nav>
+
+  <h1>Step-Up SIP Calculator</h1>
+
+  <!-- FORM (same pattern as CI) -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Initial Monthly SIP (₹)</label>
+      <input type="text" id="monthlySIP" placeholder="e.g. 5000">
+      <small class="help-text">Enter the initial monthly investment amount (e.g., 5000 for ₹5,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Annual Step-Up (%)</label>
+      <input type="text" id="stepUp" placeholder="e.g. 10">
+      <small class="help-text">Percentage increase in SIP amount every year (e.g., 10 for 10% annual increase).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Expected Annual Return (%)</label>
+      <input type="text" id="rate" placeholder="e.g. 12">
+      <small class="help-text">Expected annual return on investment (e.g., 12 for 12% return).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Investment Duration (Years)</label>
+      <input type="text" id="years" placeholder="e.g. 20">
+      <small class="help-text">Total number of years for investment (e.g., 20 for 20 years).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateStepUpSIP()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="growthChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="growthTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Monthly SIP (₹)</th>
+          <th>Total Invested (₹)</th>
+          <th>Value (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Step-Up SIP?</h2>
+    <p>
+      Step-Up SIP increases your SIP amount every year, helping you invest more as income grows.
+    </p>
+
+    <h2>Who Should Use Step-Up SIP?</h2>
+    <ul>
+      <li>Young professionals</li>
+      <li>Long-term investors</li>
+      <li>People expecting salary growth</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>How much should I step up SIP annually?</h3>
+    <p>5%–15% annual step-up is common.</p>
+
+    <h3>Does Step-Up SIP guarantee returns?</h3>
+    <p>No, returns depend on market performance.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    Returns are indicative and subject to market risks.
+  </p>
+
+</div>
+
+<script src="step-up-sip-calculator.js"></script>
+</body>
+</html>

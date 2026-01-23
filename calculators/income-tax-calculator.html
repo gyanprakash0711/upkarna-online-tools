@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Income Tax Calculator – Compare Old vs New Tax Regime</title>
+
+  <meta name="description"
+        content="Free Income Tax Calculator to compare old and new tax regimes in India. Calculate your tax liability, effective rate, and savings." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="income-tax-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Income Tax Calculator",
+        "item": "https://www.yoursite.com/calculators/income-tax-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between old and new tax regimes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The old regime has lower tax rates but fewer deductions, while the new regime has higher rates but more exemptions and simpler calculations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which tax regime is better for me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your income and deductions. Use this calculator to compare and see which saves you more tax."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there any deductions in the new regime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The new regime has standard deduction of ₹50,000 and deductions for employer NPS, but no HRA, LTA, or other old regime deductions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cess rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Health and Education Cess is 4% on the total tax amount."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Income Tax Calculator</li>
+    </ol>
+  </nav>
+
+  <h1>Income Tax Calculator (Old vs New Regime)</h1>
+
+  <form class="form-group">
+    <div class="form-row">
+      <div class="form-col">
+        <label for="annualIncome">Annual Income (₹)</label>
+        <input type="text" id="annualIncome" placeholder="e.g., 500000">
+        <div class="help-text">Enter your gross annual income before deductions</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="deductions">Deductions (Old Regime) (₹)</label>
+        <input type="text" id="deductions" placeholder="e.g., 50000">
+        <div class="help-text">HRA, LTA, Section 80C, etc. (not applicable in new regime)</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="regime">Tax Regime</label>
+        <select id="regime">
+          <option value="both">Compare Both</option>
+          <option value="old">Old Regime Only</option>
+          <option value="new">New Regime Only</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateTax()">Calculate Tax</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <div class="content-section">
+    <h2>About Income Tax Regimes in India</h2>
+    <p>The Income Tax Act of India offers two tax regimes: the old regime with lower rates but more deductions, and the new regime with higher rates but simpler structure and fewer deductions.</p>
+
+    <h3>Old Regime Tax Slabs (FY 2023-24)</h3>
+    <ul>
+      <li>Up to ₹2.5 lakh: Nil</li>
+      <li>₹2.5 lakh to ₹5 lakh: 5%</li>
+      <li>₹5 lakh to ₹10 lakh: 20%</li>
+      <li>Above ₹10 lakh: 30%</li>
+    </ul>
+
+    <h3>New Regime Tax Slabs (FY 2023-24)</h3>
+    <ul>
+      <li>Up to ₹3 lakh: Nil</li>
+      <li>₹3 lakh to ₹6 lakh: 5%</li>
+      <li>₹6 lakh to ₹9 lakh: 10%</li>
+      <li>₹9 lakh to ₹12 lakh: 15%</li>
+      <li>₹12 lakh to ₹15 lakh: 20%</li>
+      <li>Above ₹15 lakh: 30%</li>
+    </ul>
+
+    <p>Plus 4% Health and Education Cess on total tax.</p>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is the difference between old and new tax regimes?</h3>
+      <p>The old regime has lower tax rates but fewer deductions, while the new regime has higher rates but more exemptions and simpler calculations.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Which tax regime is better for me?</h3>
+      <p>It depends on your income and deductions. Use this calculator to compare and see which saves you more tax.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are there any deductions in the new regime?</h3>
+      <p>The new regime has standard deduction of ₹50,000 and deductions for employer NPS, but no HRA, LTA, or other old regime deductions.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the cess rate?</h3>
+      <p>Health and Education Cess is 4% on the total tax amount.</p>
+    </div>
+  </div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+</div>
+
+<script src="income-tax-calculator.js"></script>
+</body>
+</html>

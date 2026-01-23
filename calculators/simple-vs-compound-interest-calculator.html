@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple vs Compound Interest Calculator – Compare Simple and Compound Interest</title>
+
+  <meta name="description"
+        content="Free Simple vs Compound Interest Calculator to compare simple interest vs compound interest calculations and see the difference." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="simple-vs-compound-interest-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.yoursite.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Simple vs Compound Interest Calculator",
+        "item": "https://www.yoursite.com/calculators/simple-vs-compound-interest-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between simple and compound interest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simple interest is calculated only on the principal amount, while compound interest is calculated on both principal and accumulated interest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is compound interest beneficial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compound interest is beneficial for long-term investments as interest earns interest over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is interest compounded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interest can be compounded annually, semi-annually, quarterly, monthly, or daily depending on the investment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the formula for compound interest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A = P(1 + r/n)^(nt), where A is the amount, P is principal, r is rate, n is compounding frequency, t is time."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Simple vs Compound Interest Calculator</li>
+    </ol>
+  </nav>
+
+  <h1>Simple vs Compound Interest Calculator</h1>
+
+  <form class="form-group">
+    <div class="form-row">
+      <div class="form-col">
+        <label for="principal">Principal Amount (₹)</label>
+        <input type="text" id="principal" placeholder="e.g., 10000">
+        <div class="help-text">The initial amount invested</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="rate">Annual Interest Rate (%)</label>
+        <input type="text" id="rate" placeholder="e.g., 5">
+        <div class="help-text">Rate of interest per annum</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="time">Time Period (Years)</label>
+        <input type="text" id="time" placeholder="e.g., 5">
+        <div class="help-text">Duration of investment</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="compounding">Compounding Frequency</label>
+        <select id="compounding">
+          <option value="1">Annually</option>
+          <option value="2">Semi-Annually</option>
+          <option value="4">Quarterly</option>
+          <option value="12">Monthly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateInterest()">Calculate</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <div class="content-section">
+    <h2>About Simple vs Compound Interest</h2>
+    <p>Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus the interest that has already been earned. This makes compound interest grow faster over time.</p>
+
+    <h3>Simple Interest Formula</h3>
+    <p>SI = P × R × T / 100</p>
+
+    <h3>Compound Interest Formula</h3>
+    <p>A = P × (1 + R/(100×N))^(N×T)</p>
+    <p>Where N is compounding frequency per year</p>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is the difference between simple and compound interest?</h3>
+      <p>Simple interest is calculated only on the principal amount, while compound interest is calculated on both principal and accumulated interest.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When is compound interest beneficial?</h3>
+      <p>Compound interest is beneficial for long-term investments as interest earns interest over time.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How often is interest compounded?</h3>
+      <p>Interest can be compounded annually, semi-annually, quarterly, monthly, or daily depending on the investment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the formula for compound interest?</h3>
+      <p>A = P(1 + r/n)^(nt), where A is the amount, P is principal, r is rate, n is compounding frequency, t is time.</p>
+    </div>
+  </div>
+
+  <!-- ADS PLACEHOLDER -->
+  <div class="ads">
+    <p>Ad Space</p>
+  </div>
+
+</div>
+
+<script src="simple-vs-compound-interest-calculator.js"></script>
+</body>
+</html>

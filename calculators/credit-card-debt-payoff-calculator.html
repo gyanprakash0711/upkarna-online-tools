@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Credit Card Debt Payoff Calculator – Calculate Debt Payoff Time</title>
+
+  <meta name="description"
+        content="Free Credit Card Debt Payoff Calculator to calculate how long it takes to pay off credit card debt, total interest paid, and payoff schedule." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="credit-card-debt-payoff-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.yoursite.com/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Credit Card Debt Payoff Calculator", "item": "https://www.yoursite.com/calculators/credit-card-debt-payoff-calculator.html" }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does a credit card debt payoff calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It calculates how long it takes to pay off your credit card debt based on your balance, interest rate, minimum payment, and any extra payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum payment on a credit card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum payments are typically 2-3% of your outstanding balance, but can vary by card issuer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator provides estimates based on the inputs provided. Actual payoff may vary based on card terms and payment timing."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Credit Card Debt Payoff Calculator</span>
+  </nav>
+
+  <h1>Credit Card Debt Payoff Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Current Balance (₹)</label>
+      <input type="text" id="balance" placeholder="e.g. 50000">
+      <small class="help-text">Enter your current credit card balance (e.g., 50000 for ₹50,000).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Annual Interest Rate (%)</label>
+      <input type="text" id="rate" placeholder="e.g. 18">
+      <small class="help-text">Enter the annual interest rate on your credit card (e.g., 18 for 18%).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Minimum Monthly Payment (₹)</label>
+      <input type="text" id="minPayment" placeholder="e.g. 1500">
+      <small class="help-text">Enter your minimum monthly payment amount (e.g., 1500 for ₹1,500).</small>
+    </div>
+
+    <div class="form-group">
+      <label>Extra Monthly Payment (₹)</label>
+      <input type="text" id="extraPayment" placeholder="e.g. 2000">
+      <small class="help-text">Enter any additional amount you plan to pay monthly (e.g., 2000 for ₹2,000).</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculatePayoff()">Calculate</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="payoffChart" width="400" height="250"></canvas>
+
+  <div class="table-wrapper">
+    <table id="payoffTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Balance (₹)</th>
+          <th>Payment (₹)</th>
+          <th>Interest (₹)</th>
+          <th>Principal (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Credit Card Debt Payoff?</h2>
+    <p>
+      Credit card debt payoff calculators help you understand how long it will take to eliminate your credit card balance and how much interest you'll pay over time.
+    </p>
+
+    <h2>Why Use Extra Payments?</h2>
+    <ul>
+      <li>Reduce total interest paid</li>
+      <li>Pay off debt faster</li>
+      <li>Improve your credit score</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>How can I pay off credit card debt faster?</h3>
+    <p>Make extra payments above the minimum to reduce principal faster and save on interest.</p>
+
+    <h3>What happens if I only pay the minimum?</h3>
+    <p>You'll pay more interest over a longer period, potentially taking years to pay off.</p>
+  </section>
+
+  <!-- CONTENT-BREAK AD -->
+  <div class="ads">Ad Space</div>
+
+  <p class="note">
+    Calculations are estimates. Consult your credit card terms for exact details.
+  </p>
+
+</div>
+
+<script src="credit-card-debt-payoff-calculator.js"></script>
+</body>
+</html>
