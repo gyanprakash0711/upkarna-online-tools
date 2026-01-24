@@ -1,44 +1,85 @@
-function allowOnlyNumbers(input) {
-  input.value = input.value.replace(/[^0-9.]/g, '');
+function allowOnlyNumbers(event) {
+  const char = event.key;
+  
+  if (
+    char === "Backspace" ||
+    char === "Delete" ||
+    char === "ArrowLeft" ||
+    char === "ArrowRight" ||
+    char === "Tab"
+  ) {
+    return true;
+  }
+  
+  if (!/[0-9.]/.test(char)) {
+    event.preventDefault();
+  }
+  
+  if (char === "." && event.target.value.includes(".")) {
+    event.preventDefault();
+  }
 }
 
-function calculateCapitalGainsTax() {
-  const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
-  const salePrice = parseFloat(document.getElementById('salePrice').value);
-  const holdingPeriod = parseInt(document.getElementById('holdingPeriod').value);
-  const assetType = document.getElementById('assetType').value;
-  const resultDiv = document.getElementById('result');
-  const errorDiv = document.getElementById('error-msg');
+// Attach validation to inputs
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="text"]').forEach(input => {
+    input.addEventListener('keypress', allowOnlyNumbers);
+  });
+});
 
-  // Clear previous results
+function calculateCapitalGainsTax() {
+  // Get values
+  const purchasePriceInput = document.getElementById('purchasePrice');
+  const salePriceInput = document.getElementById('salePrice');
+  const holdingPeriodInput = document.getElementById('holdingPeriod');
+  const assetTypeInput = document.getElementById('assetType');
+  
+  const purchasePrice = parseFloat(purchasePriceInput.value.trim());
+  const salePrice = parseFloat(salePriceInput.value.trim());
+  const holdingPeriod = parseFloat(holdingPeriodInput.value.trim());
+  const assetType = assetTypeInput.value;
+  
+  const resultDiv = document.getElementById('result');
+  const errorMsg = document.getElementById('errorMsg');
+  
+  // Clear previous results and errors
   resultDiv.innerHTML = '';
-  errorDiv.innerHTML = '';
+  errorMsg.innerHTML = '';
+  
+  // Clear all error states
+  purchasePriceInput.classList.remove('error');
+  salePriceInput.classList.remove('error');
+  holdingPeriodInput.classList.remove('error');
 
   // Validation
   const errors = [];
-  if (isNaN(purchasePrice) || purchasePrice <= 0) {
-    errors.push('Please enter a valid purchase price greater than 0.');
-    document.getElementById('purchasePrice').classList.add('error');
-  } else {
-    document.getElementById('purchasePrice').classList.remove('error');
+  
+  if (!purchasePriceInput.value.trim()) {
+    errors.push('Please enter purchase price');
+    purchasePriceInput.classList.add('error');
+  } else if (isNaN(purchasePrice) || purchasePrice <= 0) {
+    errors.push('Purchase price must be greater than 0');
+    purchasePriceInput.classList.add('error');
   }
 
-  if (isNaN(salePrice) || salePrice <= 0) {
-    errors.push('Please enter a valid sale price greater than 0.');
-    document.getElementById('salePrice').classList.add('error');
-  } else {
-    document.getElementById('salePrice').classList.remove('error');
+  if (!salePriceInput.value.trim()) {
+    errors.push('Please enter sale price');
+    salePriceInput.classList.add('error');
+  } else if (isNaN(salePrice) || salePrice <= 0) {
+    errors.push('Sale price must be greater than 0');
+    salePriceInput.classList.add('error');
   }
 
-  if (isNaN(holdingPeriod) || holdingPeriod < 0) {
-    errors.push('Please enter a valid holding period in years.');
-    document.getElementById('holdingPeriod').classList.add('error');
-  } else {
-    document.getElementById('holdingPeriod').classList.remove('error');
+  if (!holdingPeriodInput.value.trim()) {
+    errors.push('Please enter holding period');
+    holdingPeriodInput.classList.add('error');
+  } else if (isNaN(holdingPeriod) || holdingPeriod < 0) {
+    errors.push('Holding period cannot be negative');
+    holdingPeriodInput.classList.add('error');
   }
 
   if (errors.length > 0) {
-    errorDiv.innerHTML = errors.join('<br>');
+    errorMsg.innerHTML = `<div class="error-box">${errors.join('<br>')}</div>`;
     return;
   }
 
@@ -172,8 +213,21 @@ function drawChart(capitalGain, taxAmount, netAmount) {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const width = canvas.width;
-  const height = canvas.height;
+  
+  // Handle high DPI displays for crisp rendering
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  
+  // Set actual canvas size (accounting for device pixel ratio)
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  
+  // Scale context to match
+  ctx.scale(dpr, dpr);
+  
+  // Use logical dimensions for drawing
+  const width = rect.width;
+  const height = rect.height;
 
   // Clear canvas
   ctx.clearRect(0, 0, width, height);
@@ -224,19 +278,14 @@ function downloadPDF() {
 }
 
 function resetForm() {
-  document.getElementById('capital-gains-form').reset();
+  document.getElementById('purchasePrice').value = '';
+  document.getElementById('salePrice').value = '';
+  document.getElementById('holdingPeriod').value = '';
+  document.getElementById('assetType').value = 'equity';
   document.getElementById('result').innerHTML = '';
-  document.getElementById('error-msg').innerHTML = '';
+  document.getElementById('errorMsg').innerHTML = '';
 
   // Clear error classes
   const inputs = document.querySelectorAll('input, select');
   inputs.forEach(input => input.classList.remove('error'));
 }
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-  // Add event listeners
-  document.getElementById('calculate-btn').addEventListener('click', calculateCapitalGainsTax);
-  document.getElementById('reset-btn').addEventListener('click', resetForm);
-  document.getElementById('download-btn').addEventListener('click', downloadPDF);
-});

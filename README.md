@@ -10,6 +10,7 @@ Visit: [https://gyanprakash0711.github.io/upkarna-online-tools/](https://gyanpra
 ### Loan & EMI Calculators
 - **EMI Calculator** - Calculate loan EMI, total interest, and payment schedule
 - **Loan Eligibility Calculator** - Check loan eligibility and affordable EMI
+- **Buy vs Rent Calculator** - Compare financial impact of buying vs renting a house
 - **Loan Prepayment Calculator** - Calculate savings from early loan repayment
 
 ### Investment Calculators

@@ -160,8 +160,15 @@
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/emi-vs-sip-comparison-tool.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/buy-vs-rent-calculator.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Buy vs Rent Calculator – Compare Buying vs Renting a House</title>
+  <meta name="description" content="Free Buy vs Rent Calculator to compare the financial impact of buying vs renting a property. Calculate total costs, investment returns, and make informed decisions." />
+  <meta name="keywords" content="buy vs rent calculator, home buying calculator, rent vs buy comparison, property investment, real estate calculator, India">
+  <meta name="author" content="Upkarana Online Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/buy-vs-rent-calculator.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFJVYTGFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4EFJVYTGFN');
+  </script>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="buy-vs-rent-calculator.css">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Buy vs Rent Calculator",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/calculators/buy-vs-rent-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I buy or rent a house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The decision depends on various factors including property price, loan interest rate, rent amount, investment returns, and your long-term plans. Use this calculator to compare both scenarios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the buy vs rent calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator compares total cost of buying (EMI + maintenance - property appreciation) vs renting (rent + investment returns on saved money) over a specified period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What factors should I consider when deciding to buy or rent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consider property price, down payment, loan interest rate, property appreciation, rent amount, rent increase rate, investment returns, maintenance costs, and your stay duration."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Buy vs Rent Calculator</span>
+  </div>
+
+  <h1>Buy vs Rent Calculator</h1>
+
+  <div class="ads">Ad Space</div>
+
+  <form id="calcForm">
+    <div class="form-grid">
+      <div class="form-section">
+        <h3>🏠 Buying Details</h3>
+        <label for="propertyPrice">Property Price (₹)</label>
+        <input type="text" id="propertyPrice" placeholder="e.g., 5000000">
+        <span class="help-text">Total cost of the property</span>
+
+        <label for="downPayment">Down Payment (%)</label>
+        <input type="text" id="downPayment" placeholder="e.g., 20">
+        <span class="help-text">Percentage paid upfront</span>
+
+        <label for="loanRate">Home Loan Interest Rate (%)</label>
+        <input type="text" id="loanRate" placeholder="e.g., 8.5">
+        <span class="help-text">Annual interest rate on loan</span>
+
+        <label for="loanTenure">Loan Tenure (Years)</label>
+        <input type="text" id="loanTenure" placeholder="e.g., 20">
+        <span class="help-text">Years to repay the loan</span>
+
+        <label for="maintenance">Monthly Maintenance (₹)</label>
+        <input type="text" id="maintenance" placeholder="e.g., 3000">
+        <span class="help-text">Monthly property maintenance cost</span>
+      </div>
+
+      <div class="form-section">
+        <h3>🏢 Renting Details</h3>
+        <label for="monthlyRent">Monthly Rent (₹)</label>
+        <input type="text" id="monthlyRent" placeholder="e.g., 25000">
+        <span class="help-text">Current monthly rent</span>
+
+        <label for="rentIncrease">Annual Rent Increase (%)</label>
+        <input type="text" id="rentIncrease" placeholder="e.g., 5">
+        <span class="help-text">Expected yearly rent hike</span>
+
+        <label for="appreciation">Property Appreciation (%)</label>
+        <input type="text" id="appreciation" placeholder="e.g., 5">
+        <span class="help-text">Expected annual property value growth</span>
+
+        <label for="investmentReturn">Investment Return (%)</label>
+        <input type="text" id="investmentReturn" placeholder="e.g., 12">
+        <span class="help-text">Return on savings if renting</span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateBuyVsRent()">Compare</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </form>
+
+  <div id="errorMsg" class="error-msg"></div>
+
+  <div id="result" class="result"></div>
+
+  <div class="ads">Ad Space</div>
+
+  <canvas id="comparisonChart"></canvas>
+
+  <div class="table-wrapper">
+    <table id="comparisonTable">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Buying (🏠)</th>
+          <th>Renting (🏢)</th>
+          <th>Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <div class="content-section">
+    <h2>About Buy vs Rent Calculator</h2>
+    <p>Our <strong>Buy vs Rent Calculator</strong> helps you make an informed decision between buying and renting a property in India. Compare the total financial impact of both options over your desired tenure.</p>
+
+    <h3>How to Use</h3>
+    <ol>
+      <li><strong>Property Price:</strong> Enter the total cost of the property you're considering</li>
+      <li><strong>Down Payment:</strong> Percentage you'll pay upfront (typically 20%)</li>
+      <li><strong>Loan Interest Rate:</strong> Home loan interest rate (current rates: 8-9%)</li>
+      <li><strong>Loan Tenure:</strong> Number of years to repay the loan</li>
+      <li><strong>Monthly Rent:</strong> Current rent for a similar property</li>
+      <li><strong>Rent Increase:</strong> Expected annual rent escalation (typically 5-7%)</li>
+      <li><strong>Property Appreciation:</strong> Expected annual property value growth</li>
+      <li><strong>Investment Return:</strong> Expected returns if you invest savings in mutual funds/stocks</li>
+      <li><strong>Maintenance:</strong> Monthly property maintenance cost</li>
+    </ol>
+
+    <h3>What Does This Calculator Show?</h3>
+    <p>The calculator compares two scenarios:</p>
+    <ul>
+      <li><strong>Buying Scenario:</strong> Total cost includes EMI payments, interest paid, maintenance costs, minus property appreciation and down payment investment growth</li>
+      <li><strong>Renting Scenario:</strong> Total cost includes rent paid (with inflation), minus investment returns on money saved (down payment + EMI-rent difference)</li>
+    </ul>
+
+    <h3>Key Factors to Consider</h3>
+    <ul>
+      <li><strong>Stay Duration:</strong> Buying is better for long-term (7+ years), renting for short-term</li>
+      <li><strong>Job Stability:</strong> Buying requires stable income to pay EMIs</li>
+      <li><strong>Liquidity:</strong> Renting keeps your capital liquid for other investments</li>
+      <li><strong>Tax Benefits:</strong> Home loan offers tax deductions under Section 80C and 24(b)</li>
+      <li><strong>Location:</strong> Property appreciation varies by city and locality</li>
+      <li><strong>Opportunity Cost:</strong> Money locked in property vs potential investment returns</li>
+    </ul>
+
+    <h3>Frequently Asked Questions</h3>
+    
+    <h4>Q: When is buying better than renting?</h4>
+    <p>Buying is typically better when:</p>
+    <ul>
+      <li>You plan to stay in the same location for 7+ years</li>
+      <li>Property appreciation rate is high (6%+ annually)</li>
+      <li>Loan interest rates are low</li>
+      <li>You have stable income to pay EMIs</li>
+      <li>Rent-to-property price ratio is high (rent is high compared to property price)</li>
+    </ul>
+
+    <h4>Q: When is renting better than buying?</h4>
+    <p>Renting is typically better when:</p>
+    <ul>
+      <li>Your job requires frequent relocations</li>
+      <li>You can invest savings and earn higher returns (12%+)</li>
+      <li>Property appreciation is low or stagnant</li>
+      <li>You prefer liquidity and flexibility</li>
+      <li>Rent-to-property price ratio is low</li>
+    </ul>
+
+    <h4>Q: What is the 1% rule?</h4>
+    <p>The 1% rule suggests buying is favorable if monthly rent is less than 1% of property price. For example, for a ₹50 lakh property, if rent is less than ₹50,000/month, renting might be more economical.</p>
+
+    <h4>Q: Should I consider tax benefits?</h4>
+    <p>Yes! Home loan interest (up to ₹2 lakh under Section 24) and principal (up to ₹1.5 lakh under Section 80C) are tax deductible. This reduces your effective EMI cost by 20-30%.</p>
+
+    <h4>Q: What about transaction costs?</h4>
+    <p>Buying involves registration charges (5-7%), stamp duty, brokerage, legal fees which add 7-10% to property cost. Our calculator considers down payment but you should factor these additional costs.</p>
+
+    <p class="note"><strong>Note:</strong> This calculator provides estimates for comparison purposes. Actual results may vary based on individual circumstances, market conditions, and additional factors like tax benefits, property registration costs, and unforeseen expenses.</p>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+</div>
+
+<script src="buy-vs-rent-calculator.js"></script>
+
+</body>
+</html>

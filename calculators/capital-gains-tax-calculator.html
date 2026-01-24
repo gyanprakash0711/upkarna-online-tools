@@ -174,11 +174,16 @@
 
     <div class="form-actions">
       <button type="button" onclick="calculateCapitalGainsTax()">Calculate Tax</button>
+      <button type="button" class="secondary-btn" onclick="resetForm()">Reset</button>
       <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
     </div>
   </form>
 
+  <div id="errorMsg" class="error-msg"></div>
+
   <div id="result" class="result"></div>
+
+  <canvas id="taxChart"></canvas>
 
   <!-- ADS PLACEHOLDER -->
   <div class="ads">
