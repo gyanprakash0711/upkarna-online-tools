@@ -37,6 +37,51 @@
     <changefreq>yearly</changefreq>
   </url>
 
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/how-to-calculate-emi.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/sip-vs-lumpsum-investment.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/buy-vs-rent-decision-guide.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/capital-gains-tax-guide-india.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/reduce-emi-without-prepayment.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/blog/get-out-of-credit-card-debt.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
   <!-- Calculator Pages - High Priority -->
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/emi-calculator.html</loc>
@@ -45,8 +90,13 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/income-tax-calculator.html</loc>
+  <url>    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/sip-calculator.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/income-tax-calculator.html</loc>
     <lastmod>2026-01-23</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
