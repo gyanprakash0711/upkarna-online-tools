@@ -1,4 +1,4 @@
-# Upkarana Online Tools
+# Upkarna Online Tools
 
 Free financial calculators for Indian users including EMI, SIP, loan, tax, and investment calculators.
 
