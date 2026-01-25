@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gratuity Calculator – Calculate Gratuity Amount Online</title>
+
+  <meta name="description"
+        content="Free Gratuity Calculator to calculate gratuity amount as per Payment of Gratuity Act 1972. Calculate gratuity for government and private sector employees in India." />
+  <meta name="keywords" content="gratuity calculator, gratuity calculation, gratuity formula, payment of gratuity act, gratuity amount, India">
+  <meta name="author" content="Upkarana Online Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gratuity-calculator.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFJVYTGFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4EFJVYTGFN');
+  </script>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="gratuity-calculator.css">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gratuity Calculator",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gratuity-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is gratuity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gratuity is a lump sum amount paid by an employer to an employee as a token of appreciation for services rendered. It's governed by the Payment of Gratuity Act, 1972 in India."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is gratuity calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gratuity = (Last drawn salary × 15 × Number of years of service) / 26. For employees not covered under the Act, the divisor is 30 instead of 26."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When am I eligible for gratuity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You are eligible for gratuity after completing 5 years of continuous service with an employer. In case of death or disability, gratuity is payable even before 5 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum gratuity amount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The maximum gratuity amount is capped at ₹20 lakhs as per the Payment of Gratuity Act, 1972."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is gratuity taxable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gratuity is tax-exempt up to ₹20 lakhs for government employees and private sector employees covered under the Payment of Gratuity Act. Any amount above ₹20 lakhs is taxable."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Gratuity Calculator</span>
+  </nav>
+
+  <h1>Gratuity Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-section">
+    <label for="employeeType">Employee Type</label>
+    <select id="employeeType">
+      <option value="covered">Covered under Gratuity Act</option>
+      <option value="notCovered">Not Covered under Gratuity Act</option>
+    </select>
+    <span class="help-text">Select if your organization is covered under Payment of Gratuity Act, 1972.</span>
+
+    <label for="lastSalary">Last Drawn Salary (₹ per month)</label>
+    <input type="text" id="lastSalary" placeholder="e.g., 50000">
+    <span class="help-text">Basic salary + Dearness Allowance (if applicable).</span>
+
+    <label for="yearsOfService">Years of Service</label>
+    <input type="text" id="yearsOfService" placeholder="e.g., 10">
+    <span class="help-text">Total years of continuous service (minimum 5 years required).</span>
+
+    <label for="monthsOfService">Additional Months</label>
+    <input type="text" id="monthsOfService" placeholder="e.g., 6">
+    <span class="help-text">Additional months beyond completed years (0-11 months).</span>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateGratuity()">Calculate Gratuity</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="errorMsg" class="error-msg"></div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is Gratuity?</h2>
+    <p>
+      Gratuity is a lump sum payment made by an employer to an employee as a token of appreciation for services rendered over the years. It's a retirement benefit governed by the <strong>Payment of Gratuity Act, 1972</strong> in India.
+    </p>
+
+    <h2>Gratuity Eligibility</h2>
+    <p>To be eligible for gratuity, an employee must:</p>
+    <ul>
+      <li>Have completed at least <strong>5 years of continuous service</strong> with the same employer</li>
+      <li>Be employed in an organization with 10 or more employees (for Act coverage)</li>
+      <li>In case of death or disability, gratuity is payable even before completing 5 years</li>
+    </ul>
+
+    <h2>Gratuity Calculation Formula</h2>
+    <p>The gratuity amount is calculated using the following formula:</p>
+    
+    <div class="formula-box">
+      <strong>For employees covered under the Act:</strong><br>
+      Gratuity = (Last drawn salary × 15 × Years of service) ÷ 26<br><br>
+      
+      <strong>For employees NOT covered under the Act:</strong><br>
+      Gratuity = (Last drawn salary × 15 × Years of service) ÷ 30
+    </div>
+
+    <p><strong>Where:</strong></p>
+    <ul>
+      <li><strong>Last drawn salary</strong> = Basic salary + Dearness Allowance (DA)</li>
+      <li><strong>15</strong> = Days of salary for each completed year</li>
+      <li><strong>26</strong> = Average working days per month (covered under Act)</li>
+      <li><strong>30</strong> = Days in a month (not covered under Act)</li>
+    </ul>
+
+    <h2>Example Calculation</h2>
+    <div class="example-box">
+      <strong>Scenario:</strong><br>
+      • Last drawn salary: ₹50,000 per month<br>
+      • Years of service: 10 years 6 months<br>
+      • Employee type: Covered under Gratuity Act<br><br>
+
+      <strong>Calculation:</strong><br>
+      Years of service = 10 + (6/12) = 10.5 years (rounded to 11 years)<br>
+      Gratuity = (50,000 × 15 × 11) ÷ 26<br>
+      Gratuity = ₹8,250,000 ÷ 26<br>
+      <strong>Gratuity Amount = ₹3,17,307.69</strong>
+    </div>
+
+    <h2>Important Points</h2>
+    <ul>
+      <li><strong>Maximum Limit:</strong> Gratuity is capped at ₹20 lakhs</li>
+      <li><strong>Rounding:</strong> If months of service are 6 or more, round up to next year</li>
+      <li><strong>Tax Exemption:</strong> Up to ₹20 lakhs is tax-exempt for eligible employees</li>
+      <li><strong>Payment Timeline:</strong> Employer must pay within 30 days of becoming due</li>
+      <li><strong>Forfeiture:</strong> Can be forfeited in case of misconduct or moral turpitude</li>
+    </ul>
+
+    <h2>Tax Treatment of Gratuity</h2>
+    <p><strong>Tax-exempt gratuity amounts:</strong></p>
+    <ul>
+      <li><strong>Government Employees:</strong> Fully exempt (no limit)</li>
+      <li><strong>Private Sector (covered under Act):</strong> Exempt up to ₹20 lakhs</li>
+      <li><strong>Private Sector (not covered):</strong> Exempt up to ₹10 lakhs</li>
+    </ul>
+    <p>Any amount above the exemption limit is added to your income and taxed as per your tax slab.</p>
+
+    <h2>Who is Covered Under Payment of Gratuity Act?</h2>
+    <p>The Act applies to:</p>
+    <ul>
+      <li>Factories, mines, oilfields, plantations, ports, railways</li>
+      <li>Shops or establishments with 10 or more employees</li>
+      <li>Educational institutions, hospitals, chambers of commerce</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    
+    <h3>Can I get gratuity if I resign before 5 years?</h3>
+    <p>No, you must complete 5 years of continuous service to be eligible for gratuity. Exception: In case of death or disability, gratuity is payable even before 5 years.</p>
+
+    <h3>Is DA included in gratuity calculation?</h3>
+    <p>Yes, Dearness Allowance (DA) is included in the last drawn salary for gratuity calculation. However, HRA, conveyance, and other allowances are not included.</p>
+
+    <h3>What if I change jobs?</h3>
+    <p>Gratuity is paid by each employer separately based on years of service with them. Service period doesn't carry forward to the new employer.</p>
+
+    <h3>How is gratuity different from PF?</h3>
+    <p>PF (Provident Fund) is a monthly contribution-based retirement savings, while gratuity is a one-time payment at the end of service. PF has no minimum service requirement, but gratuity requires 5 years.</p>
+
+    <h3>Can employer refuse to pay gratuity?</h3>
+    <p>No, payment of gratuity is a statutory right. Employer must pay within 30 days. Refusal or delay attracts penalties and interest.</p>
+  </section>
+
+</div>
+
+<script src="gratuity-calculator.js"></script>
+
+</body>
+</html>

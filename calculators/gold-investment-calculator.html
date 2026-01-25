@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gold Investment Calculator – Calculate Returns on Gold Investment</title>
+
+  <meta name="description" content="Free Gold Investment Calculator to calculate returns on your gold investment. Calculate profit, absolute return, and CAGR for physical gold, digital gold, and SGB." />
+  <meta name="keywords" content="gold calculator, gold return calculator, gold investment calculator, CAGR calculator for gold, gold profit calculator India, SGB calculator">
+  <meta name="author" content="Upkarana Online Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gold-investment-calculator.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFJVYTGFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4EFJVYTGFN');
+  </script>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="gold-investment-calculator.css">
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gold Investment Calculator",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gold-investment-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to calculate gold investment returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gold investment returns are calculated using the formula: Returns = (Current Price - Purchase Price) × Quantity. CAGR is calculated as: ((Current Value / Initial Investment)^(1/Years) - 1) × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is gold a good investment in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gold is a good hedge against inflation and currency devaluation. It provides portfolio diversification and historically averages 8-10% annual returns. However, it doesn't generate income like stocks or FDs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the different ways to invest in gold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can invest in gold through Physical Gold (jewelry, coins, bars), Digital Gold, Sovereign Gold Bonds (SGB), Gold ETFs, and Gold Mutual Funds. Each has different benefits, costs, and tax implications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the tax on gold investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Physical gold held over 3 years is taxed as LTCG at 20% with indexation. Gold held less than 3 years is taxed as STCG at your income tax slab. SGB interest is taxable but capital gains are tax-free if held till maturity."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">Gold Investment Calculator</span>
+  </nav>
+
+  <h1>Gold Investment Calculator</h1>
+
+  <!-- FORM -->
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="investmentAmount">Investment Amount (₹)</label>
+      <input type="text" id="investmentAmount" placeholder="e.g., 100000">
+      <small class="help-text">Total amount invested in gold</small>
+    </div>
+
+    <div class="form-group">
+      <label for="purchasePrice">Purchase Price (₹ per gram)</label>
+      <input type="text" id="purchasePrice" placeholder="e.g., 5000">
+      <small class="help-text">Price at which you bought gold</small>
+    </div>
+
+    <div class="form-group">
+      <label for="currentPrice">Current Price (₹ per gram)</label>
+      <input type="text" id="currentPrice" placeholder="e.g., 6500">
+      <small class="help-text">Current market price of gold</small>
+    </div>
+
+    <div class="form-group">
+      <label for="investmentDuration">Investment Duration (Years)</label>
+      <input type="text" id="investmentDuration" placeholder="e.g., 5">
+      <small class="help-text">Number of years gold was held</small>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateGoldReturns()">Calculate</button>
+    <button class="secondary-btn" onclick="resetForm()">Reset</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="errorMessage" class="error-msg"></div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <canvas id="goldChart"></canvas>
+
+  <div class="table-wrapper">
+    <table id="goldTable">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Investment Value</th>
+          <th>Returns</th>
+          <th>Total Value</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="content-section">
+    <h2>About Gold Investment Calculator</h2>
+    <p>Our <strong>Gold Investment Calculator</strong> helps you calculate the returns on your gold investment. Whether you invested in physical gold, digital gold, or Sovereign Gold Bonds (SGB), this calculator provides accurate profit, absolute return percentage, and CAGR (Compound Annual Growth Rate).</p>
+
+    <h2>How to Use This Calculator</h2>
+    <ol>
+      <li><strong>Investment Amount:</strong> Enter the total money you invested in gold (₹)</li>
+      <li><strong>Purchase Price:</strong> Enter the gold price per gram when you bought it</li>
+      <li><strong>Current Price:</strong> Enter the current market price of gold per gram</li>
+      <li><strong>Investment Duration:</strong> Enter how many years you've held the gold</li>
+      <li>Click "Calculate" to see your returns, profit, and CAGR</li>
+    </ol>
+
+    <h2>Understanding Gold Returns</h2>
+    <ul>
+      <li><strong>Profit/Loss:</strong> Absolute gain or loss on your gold investment in rupees</li>
+      <li><strong>Absolute Return:</strong> Total return percentage ((Current Value - Investment) / Investment × 100)</li>
+      <li><strong>CAGR:</strong> Annualized return rate that shows yearly growth ((Current/Initial)^(1/Years) - 1)</li>
+      <li><strong>Current Value:</strong> Present market value of your gold holdings</li>
+    </ul>
+
+    <h2>Ways to Invest in Gold</h2>
+    
+    <h3>1. Physical Gold</h3>
+    <p><strong>Forms:</strong> Jewelry, gold coins, gold bars<br>
+    <strong>Pros:</strong> Tangible asset, cultural value, no demat account needed<br>
+    <strong>Cons:</strong> Making charges (10-25%), storage risk, lower liquidity</p>
+
+    <h3>2. Digital Gold</h3>
+    <p><strong>Platforms:</strong> Google Pay, Paytm, PhonePe, MMTC-PAMP<br>
+    <strong>Pros:</strong> Start from ₹1, safe storage, 24k purity guaranteed<br>
+    <strong>Cons:</strong> 3% GST, platform charges, delivery charges</p>
+
+    <h3>3. Sovereign Gold Bonds (SGB)</h3>
+    <p><strong>Issuer:</strong> RBI on behalf of Government of India<br>
+    <strong>Pros:</strong> 2.5% annual interest, capital gains tax-free if held till maturity (8 years), tradable on stock exchange<br>
+    <strong>Cons:</strong> 5-year lock-in, limited liquidity before maturity</p>
+
+    <h3>4. Gold ETFs</h3>
+    <p><strong>Examples:</strong> SBI Gold ETF, HDFC Gold ETF, Nippon India Gold ETF<br>
+    <strong>Pros:</strong> High liquidity, low expense ratio (0.5-1%), no storage hassle<br>
+    <strong>Cons:</strong> Requires demat account, management fees</p>
+
+    <h3>5. Gold Mutual Funds</h3>
+    <p><strong>Type:</strong> Fund of Funds investing in Gold ETFs<br>
+    <strong>Pros:</strong> No demat needed, SIP option available, professional management<br>
+    <strong>Cons:</strong> Slightly higher expense ratio than ETFs</p>
+
+    <h2>Gold Investment Tips</h2>
+    <ul>
+      <li><strong>Allocate 10-15% of Portfolio:</strong> Don't put all eggs in one basket. Gold is for diversification, not primary investment</li>
+      <li><strong>Buy During Corrections:</strong> Gold prices fluctuate. Buy when prices dip below long-term average</li>
+      <li><strong>Avoid Jewelry for Investment:</strong> 15-25% making charges reduce returns. Buy coins/bars if buying physical gold</li>
+      <li><strong>Consider SGB for Long-Term:</strong> Best option with 2.5% interest + price appreciation + tax benefits</li>
+      <li><strong>Track Global Prices:</strong> Indian gold prices follow international rates. Monitor USD/INR and global gold trends</li>
+      <li><strong>Don't Time the Market:</strong> If investing regularly, consider Gold SIP through digital gold or mutual funds</li>
+    </ul>
+
+    <h2>Tax Implications on Gold</h2>
+    
+    <h3>Physical Gold & Digital Gold</h3>
+    <ul>
+      <li><strong>Short Term (< 3 years):</strong> Gains taxed at your income tax slab rate (STCG)</li>
+      <li><strong>Long Term (≥ 3 years):</strong> 20% tax with indexation benefit (LTCG)</li>
+    </ul>
+
+    <h3>Sovereign Gold Bonds (SGB)</h3>
+    <ul>
+      <li><strong>Interest Income:</strong> 2.5% per annum taxable as per your income slab</li>
+      <li><strong>Capital Gains:</strong> Tax-free if held till maturity (8 years)</li>
+      <li><strong>Early Exit:</strong> After 5 years, LTCG of 20% with indexation applies</li>
+    </ul>
+
+    <h3>Gold ETFs & Mutual Funds</h3>
+    <ul>
+      <li><strong>Short Term (< 3 years):</strong> Taxed at your slab rate</li>
+      <li><strong>Long Term (≥ 3 years):</strong> 20% with indexation benefit</li>
+    </ul>
+
+    <h2>Historical Gold Returns in India</h2>
+    <ul>
+      <li><strong>Last 10 Years (2016-2026):</strong> ~8-10% CAGR</li>
+      <li><strong>Last 20 Years (2006-2026):</strong> ~9-11% CAGR</li>
+      <li><strong>Performance:</strong> Beats inflation, underperforms equity in long term</li>
+      <li><strong>Best Use:</strong> Hedge against market volatility and currency depreciation</li>
+    </ul>
+
+    <h2>When to Buy Gold?</h2>
+    <ul>
+      <li>✅ When stock markets are at all-time highs (rebalancing)</li>
+      <li>✅ During global economic uncertainty</li>
+      <li>✅ When rupee is weakening against dollar</li>
+      <li>✅ During gold price corrections (10-15% from peak)</li>
+      <li>✅ As part of regular portfolio diversification</li>
+    </ul>
+
+    <h2>Common Mistakes to Avoid</h2>
+    <ul>
+      <li>❌ Buying jewelry for investment (high making charges eat returns)</li>
+      <li>❌ Investing 100% emergency fund in gold (low liquidity)</li>
+      <li>❌ Ignoring GST and making charges in calculation</li>
+      <li>❌ Not considering storage and insurance costs</li>
+      <li>❌ Selling gold in panic during short-term volatility</li>
+      <li>❌ Over-allocating to gold (should be 10-15% of portfolio max)</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    
+    <h3>Q: How much gold should I own?</h3>
+    <p>Financial experts recommend 10-15% of your investment portfolio in gold. This provides adequate diversification without over-exposure to a non-income generating asset.</p>
+
+    <h3>Q: Is 24K gold better than 22K for investment?</h3>
+    <p>For investment, 24K (99.9% pure) is better as it has higher resale value and no making charges. 22K is suitable for jewelry due to better durability.</p>
+
+    <h3>Q: Should I buy physical gold or digital gold?</h3>
+    <p>For investment purposes, digital gold or SGB is better due to lower costs and no storage hassles. Physical gold is suitable if you need it for occasions or prefer tangible assets.</p>
+
+    <h3>Q: What is the best time to sell gold?</h3>
+    <p>Sell when gold prices are 15-20% above your purchase price or when you need to rebalance portfolio. For tax efficiency, hold for 3+ years to get indexation benefits.</p>
+
+    <h3>Q: Can I do SIP in gold?</h3>
+    <p>Yes! You can invest regularly in gold through Digital Gold SIP (Google Pay, PhonePe), Gold Mutual Fund SIP, or by buying SGBs in every issue. Monthly SIP of ₹1,000-5,000 in gold is ideal.</p>
+
+    <h3>Q: Is gold better than FD for savings?</h3>
+    <p>Gold typically outperforms FD in the long term (5+ years) but comes with price volatility. FDs are better for short-term goals and guaranteed returns. Ideally, have both in your portfolio.</p>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <div class="note">
+    <strong>Disclaimer:</strong> This calculator provides estimates based on the inputs provided. Actual returns may vary based on gold quality, making charges, GST, storage costs, and market conditions. Consult a financial advisor before making investment decisions.
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Upkarana Online Tools. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+<script src="gold-investment-calculator.js"></script>
+</body>
+</html>

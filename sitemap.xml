@@ -94,198 +94,246 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
-  <!-- Calculator Pages - High Priority -->
+  <!-- Calculator Pages - Ordered by Popularity in India -->
+  
+  <!-- Highest Priority - Most Popular Calculators -->
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/emi-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/sip-calculator.html</loc>
-    <lastmod>2026-01-24</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/income-tax-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-01-25</lastmod>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/ppf-maturity-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.8</priority>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/income-tax-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.95</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/epf-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.8</priority>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/sip-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.95</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/fd-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/epf-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- High Priority - Very Popular Calculators -->
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/loan-eligibility-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/hra-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/ppf-maturity-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/lumpsum-investment-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/rd-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gratuity-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/nps-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/compound-interest-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/capital-gains-tax-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Medium Priority - Popular Calculators -->
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/mutual-fund-return-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.8</priority>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/rd-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.75</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/loan-eligibility-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/nps-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/education-loan-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/credit-card-debt-payoff-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/retirement-planning-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Other Calculators - Medium Priority -->
   <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/compound-interest-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/mutual-fund-return-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/step-up-sip-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/loan-prepayment-foreclosure-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Lower Priority - Niche Calculators -->
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/car-loan-vs-lease-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/buy-vs-rent-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/real-cagr-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/medical-insurance-80d-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/fire-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/wealth-goal-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/gold-investment-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/emi-vs-sip-comparison-tool.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/net-worth-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/credit-card-debt-payoff-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/lumpsum-investment-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/step-up-sip-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/real-cagr-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/emi-vs-sip-comparison-tool.html</loc>
-    <lastmod>2026-01-24</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/buy-vs-rent-calculator.html</loc>
-    <lastmod>2026-01-24</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/loan-prepayment-foreclosure-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/break-even-investment-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/fire-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/wealth-goal-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.55</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/monthly-savings-planner.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.55</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/break-even-investment-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/credit-score-impact-simulator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.55</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/inflation-impact-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/simple-vs-compound-interest-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/inflation-impact-calculator.html</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HRA Calculator – Calculate House Rent Allowance Tax Exemption Online</title>
+
+  <meta name="description"
+        content="Free HRA Calculator to calculate House Rent Allowance tax exemption as per Income Tax Act. Calculate HRA exemption for metro and non-metro cities in India." />
+  <meta name="keywords" content="HRA calculator, house rent allowance, HRA exemption, HRA tax benefit, salary calculator, income tax calculator">
+  <meta name="author" content="Upkarana Online Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/hra-calculator.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HRA Calculator – Calculate House Rent Allowance Tax Exemption">
+  <meta property="og:description" content="Calculate your HRA tax exemption instantly. Free online calculator for metro and non-metro cities.">
+  <meta property="og:url" content="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/hra-calculator.html">
+  <meta property="og:type" content="website">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFJVYTGFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4EFJVYTGFN');
+  </script>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="hra-calculator.css">
+
+  <!-- AdSense script (UNCOMMENT AFTER APPROVAL) -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/tools.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "HRA Calculator",
+        "item": "https://gyanprakash0711.github.io/upkarna-online-tools/calculators/hra-calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is HRA and how is it calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HRA (House Rent Allowance) is a component of salary provided by employers to employees for accommodation expenses. HRA exemption is the minimum of: (1) Actual HRA received, (2) 50% of basic salary for metro cities or 40% for non-metro cities, (3) Rent paid minus 10% of basic salary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which cities are considered metro cities for HRA calculation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metro cities for HRA exemption include Mumbai, Delhi, Kolkata, and Chennai. For these cities, 50% of basic salary is considered. For all other cities, 40% of basic salary is considered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I claim HRA if I live in my own house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, you cannot claim HRA tax exemption if you live in your own house. HRA exemption is available only when you are paying rent for accommodation. You need to submit rent receipts to claim HRA exemption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents are required to claim HRA exemption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To claim HRA exemption, you need: (1) Rent receipts or rental agreement, (2) Landlord's PAN card if annual rent exceeds ₹1 lakh, (3) Proof of rent payment like bank statements or cancelled cheques."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is basic salary the same as gross salary for HRA calculation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, basic salary and gross salary are different. Basic salary includes only the base pay and dearness allowance (DA). Gross salary includes all components like HRA, special allowance, conveyance, etc. For HRA calculation, use basic salary + DA only."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the taxable HRA amount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taxable HRA = Actual HRA received - HRA exemption. The exempted amount is calculated as the minimum of three values: actual HRA, 50%/40% of salary, and rent minus 10% of salary. The remaining HRA is taxable."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">HRA Calculator</span>
+  </nav>
+
+  <h1>HRA Calculator - Calculate House Rent Allowance Tax Exemption</h1>
+
+  <!-- FORM -->
+  <div class="form-section">
+    <label for="cityType">City Type</label>
+    <select id="cityType">
+      <option value="metro">Metro City (Mumbai, Delhi, Kolkata, Chennai)</option>
+      <option value="nonMetro">Non-Metro City</option>
+    </select>
+    <span class="help-text">Select your city type to calculate HRA exemption (50% for metro, 40% for non-metro).</span>
+
+    <label for="basicSalary">Basic Salary (₹ per month)</label>
+    <input type="text" id="basicSalary" placeholder="e.g., 50000" onkeypress="allowOnlyNumbers(event)">
+    <span class="help-text">Enter your monthly basic salary + Dearness Allowance (DA) if applicable.</span>
+
+    <label for="hraReceived">HRA Received (₹ per month)</label>
+    <input type="text" id="hraReceived" placeholder="e.g., 20000" onkeypress="allowOnlyNumbers(event)">
+    <span class="help-text">Enter the actual HRA amount received from your employer per month.</span>
+
+    <label for="rentPaid">Rent Paid (₹ per month)</label>
+    <input type="text" id="rentPaid" placeholder="e.g., 15000" onkeypress="allowOnlyNumbers(event)">
+    <span class="help-text">Enter the monthly rent you pay for your accommodation.</span>
+  </div>
+
+  <div class="form-actions">
+    <button onclick="calculateHRA()">Calculate HRA Exemption</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+  <div id="errorMsg" class="error-msg"></div>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <!-- SEO CONTENT -->
+  <section class="content-section">
+    <h2>What is HRA (House Rent Allowance)?</h2>
+    <p>House Rent Allowance (HRA) is a salary component provided by employers to employees to meet their accommodation expenses. HRA forms a significant part of the salary structure for salaried individuals in India. Under Section 10(13A) of the Income Tax Act, a portion of HRA is exempt from tax, which helps reduce your overall tax liability.</p>
+    
+    <p>The HRA exemption is designed to provide relief to employees who live in rented accommodation. Not all of the HRA received is tax-exempt; only a calculated portion based on specific criteria is exempted. The remaining amount is added to your taxable income. Understanding how HRA exemption works is crucial for tax planning and maximizing your take-home salary.</p>
+
+    <p>Our HRA Calculator helps you instantly determine how much of your HRA is tax-exempt and how much is taxable. This is essential for accurate tax planning, filling ITR forms, and understanding your salary breakup better.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>How is HRA Exemption Calculated?</h2>
+    <p>HRA exemption is calculated as per the rules specified under Section 10(13A) of the Income Tax Act. The exemption is the <strong>minimum</strong> of the following three amounts:</p>
+    
+    <div class="formula-box">
+      <h3>HRA Exemption Formula:</h3>
+      <p><strong>The MINIMUM of:</strong></p>
+      <ol>
+        <li><strong>Actual HRA received</strong> from employer</li>
+        <li><strong>50% of Basic Salary</strong> (for metro cities) <br>OR<br> <strong>40% of Basic Salary</strong> (for non-metro cities)</li>
+        <li><strong>Rent Paid minus 10% of Basic Salary</strong></li>
+      </ol>
+      <p class="note"><strong>Note:</strong> Basic Salary = Basic + Dearness Allowance (DA)</p>
+    </div>
+
+    <div class="example-box">
+      <h3>Example Calculation:</h3>
+      <p><strong>Scenario:</strong> Employee in Mumbai (Metro City)</p>
+      <ul>
+        <li>Basic Salary: ₹50,000/month</li>
+        <li>HRA Received: ₹20,000/month</li>
+        <li>Rent Paid: ₹15,000/month</li>
+      </ul>
+      <p><strong>Calculation:</strong></p>
+      <ol>
+        <li>Actual HRA = ₹20,000</li>
+        <li>50% of Basic = 50% × ₹50,000 = ₹25,000</li>
+        <li>Rent - 10% of Basic = ₹15,000 - (10% × ₹50,000) = ₹15,000 - ₹5,000 = ₹10,000</li>
+      </ol>
+      <p><strong>HRA Exemption = Minimum(₹20,000, ₹25,000, ₹10,000) = ₹10,000/month</strong></p>
+      <p><strong>Taxable HRA = ₹20,000 - ₹10,000 = ₹10,000/month</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>How to Use This HRA Calculator</h2>
+    <ol>
+      <li><strong>Select City Type:</strong> Choose whether you live in a metro city (Mumbai, Delhi, Kolkata, Chennai) or non-metro city</li>
+      <li><strong>Enter Basic Salary:</strong> Input your monthly basic salary plus dearness allowance (DA) if applicable</li>
+      <li><strong>Enter HRA Received:</strong> Input the actual HRA amount you receive from your employer per month</li>
+      <li><strong>Enter Rent Paid:</strong> Input the monthly rent you pay to your landlord</li>
+      <li><strong>Click Calculate:</strong> The calculator will instantly show your HRA exemption, taxable HRA, and detailed breakdown</li>
+      <li><strong>Download PDF:</strong> Save the calculation report for your records or tax filing</li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2>Key Features of Our HRA Calculator</h2>
+    <ul>
+      <li>✅ <strong>100% Free:</strong> No registration or payment required</li>
+      <li>✅ <strong>Instant Results:</strong> Get calculations in seconds</li>
+      <li>✅ <strong>Metro & Non-Metro:</strong> Supports both city types with different exemption rates</li>
+      <li>✅ <strong>Detailed Breakdown:</strong> See all three calculation components clearly</li>
+      <li>✅ <strong>Annual Calculation:</strong> View both monthly and yearly exemption amounts</li>
+      <li>✅ <strong>PDF Download:</strong> Save and share your calculation report</li>
+      <li>✅ <strong>Mobile Friendly:</strong> Works seamlessly on all devices</li>
+      <li>✅ <strong>As per IT Act:</strong> Calculations follow Section 10(13A) rules accurately</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>Metro vs Non-Metro Cities for HRA</h2>
+    <div class="info-box">
+      <h3>Metro Cities (50% Exemption Limit):</h3>
+      <p>The following cities are classified as metro cities for HRA calculation:</p>
+      <ul>
+        <li>Mumbai (Bombay)</li>
+        <li>Delhi</li>
+        <li>Kolkata (Calcutta)</li>
+        <li>Chennai (Madras)</li>
+      </ul>
+      <p>For these cities, up to 50% of basic salary can be considered for HRA exemption.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Non-Metro Cities (40% Exemption Limit):</h3>
+      <p>All other cities in India are classified as non-metro cities, including:</p>
+      <ul>
+        <li>Bangalore, Hyderabad, Pune, Ahmedabad</li>
+        <li>Tier-2 cities like Chandigarh, Jaipur, Lucknow, Kochi</li>
+        <li>All other towns and cities</li>
+      </ul>
+      <p>For these cities, up to 40% of basic salary can be considered for HRA exemption.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Important Points About HRA Exemption</h2>
+    <div class="warning-box">
+      <ul>
+        <li>⚠️ <strong>Living in Own House:</strong> You cannot claim HRA exemption if you live in your own house. You must be paying rent.</li>
+        <li>⚠️ <strong>Rent Receipts Required:</strong> Keep rent receipts or rental agreement as proof for claiming exemption.</li>
+        <li>⚠️ <strong>Landlord's PAN:</strong> If annual rent exceeds ₹1 lakh, you must provide your landlord's PAN card details.</li>
+        <li>⚠️ <strong>Basic Salary Only:</strong> Use only basic salary + DA for calculation, not gross salary or CTC.</li>
+        <li>⚠️ <strong>Minimum of Three:</strong> Remember, exemption is the MINIMUM of three calculated amounts, not the maximum.</li>
+        <li>⚠️ <strong>Both Old & New Regime:</strong> HRA exemption is available only under the Old Tax Regime, not under the New Tax Regime.</li>
+        <li>⚠️ <strong>Shared Accommodation:</strong> If you share rent, only your portion of rent paid can be claimed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Documents Required for HRA Claim</h2>
+    <p>To claim HRA exemption from your employer and in your Income Tax Return, you need the following documents:</p>
+    <ol>
+      <li><strong>Rent Receipts:</strong> Monthly or quarterly rent receipts from your landlord with revenue stamp if rent exceeds ₹15,000/month</li>
+      <li><strong>Rental Agreement:</strong> A copy of the rental agreement/lease deed</li>
+      <li><strong>Landlord's PAN:</strong> If annual rent exceeds ₹1,00,000, landlord's PAN is mandatory</li>
+      <li><strong>Proof of Payment:</strong> Bank statements, cancelled cheques, or online transfer receipts showing rent payment</li>
+      <li><strong>Landlord's Details:</strong> Name, address, and contact information of the landlord</li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2>HRA Exemption in Old vs New Tax Regime</h2>
+    <div class="info-box">
+      <h3>Old Tax Regime:</h3>
+      <p>HRA exemption under Section 10(13A) is <strong>AVAILABLE</strong> in the old tax regime. You can claim HRA exemption as calculated by this calculator and reduce your taxable income.</p>
+    </div>
+
+    <div class="warning-box">
+      <h3>New Tax Regime (Default from FY 2023-24):</h3>
+      <p>HRA exemption is <strong>NOT AVAILABLE</strong> in the new tax regime. If you opt for the new regime with lower tax rates, you cannot claim HRA exemption. The entire HRA received will be taxable.</p>
+      <p><strong>Tip:</strong> Calculate your tax under both regimes to decide which is more beneficial. Use our <a href="income-tax-calculator.html">Income Tax Calculator</a> to compare.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Benefits of Using HRA Calculator</h2>
+    <ul>
+      <li><strong>Accurate Tax Planning:</strong> Know exactly how much tax you can save through HRA exemption</li>
+      <li><strong>ITR Filing:</strong> Get the correct exemption amount to fill in your Income Tax Return</li>
+      <li><strong>Salary Negotiation:</strong> Understand HRA component better during salary discussions</li>
+      <li><strong>Investment Planning:</strong> Calculate actual take-home after HRA benefit to plan investments</li>
+      <li><strong>Rent Decision:</strong> Determine optimal rent amount to maximize HRA exemption</li>
+      <li><strong>City Comparison:</strong> Compare HRA benefits between metro and non-metro cities</li>
+      <li><strong>Quick Verification:</strong> Verify employer's HRA calculation in salary slip</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>Common Scenarios & Solutions</h2>
+    
+    <div class="example-box">
+      <h3>Scenario 1: No HRA Component in Salary</h3>
+      <p><strong>Question:</strong> My salary doesn't have HRA. Can I still claim exemption?</p>
+      <p><strong>Answer:</strong> No, you cannot claim HRA exemption under Section 10(13A) if you don't receive HRA from your employer. However, you can claim deduction under Section 80GG if you're paying rent.</p>
+    </div>
+
+    <div class="example-box">
+      <h3>Scenario 2: Paying Rent to Parents</h3>
+      <p><strong>Question:</strong> I pay rent to my parents. Can I claim HRA?</p>
+      <p><strong>Answer:</strong> Yes, you can pay rent to parents and claim HRA exemption. Ensure you have a proper rental agreement and your parents declare this as rental income in their ITR.</p>
+    </div>
+
+    <div class="example-box">
+      <h3>Scenario 3: Living in Multiple Cities</h3>
+      <p><strong>Question:</strong> I lived in metro city for 6 months and non-metro for 6 months. How to calculate?</p>
+      <p><strong>Answer:</strong> Calculate HRA exemption separately for each period (6 months metro + 6 months non-metro) and add them for annual exemption.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    
+    <div class="faq-item">
+      <h3>What is HRA and how is it calculated?</h3>
+      <p>HRA (House Rent Allowance) is a component of salary provided by employers to employees for accommodation expenses. HRA exemption is the minimum of: (1) Actual HRA received, (2) 50% of basic salary for metro cities or 40% for non-metro cities, (3) Rent paid minus 10% of basic salary.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Which cities are considered metro cities for HRA calculation?</h3>
+      <p>Metro cities for HRA exemption include Mumbai, Delhi, Kolkata, and Chennai. For these cities, 50% of basic salary is considered. For all other cities, 40% of basic salary is considered.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I claim HRA if I live in my own house?</h3>
+      <p>No, you cannot claim HRA tax exemption if you live in your own house. HRA exemption is available only when you are paying rent for accommodation. You need to submit rent receipts to claim HRA exemption.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What documents are required to claim HRA exemption?</h3>
+      <p>To claim HRA exemption, you need: (1) Rent receipts or rental agreement, (2) Landlord's PAN card if annual rent exceeds ₹1 lakh, (3) Proof of rent payment like bank statements or cancelled cheques.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is basic salary the same as gross salary for HRA calculation?</h3>
+      <p>No, basic salary and gross salary are different. Basic salary includes only the base pay and dearness allowance (DA). Gross salary includes all components like HRA, special allowance, conveyance, etc. For HRA calculation, use basic salary + DA only.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the taxable HRA amount?</h3>
+      <p>Taxable HRA = Actual HRA received - HRA exemption. The exempted amount is calculated as the minimum of three values: actual HRA, 50%/40% of salary, and rent minus 10% of salary. The remaining HRA is taxable.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I claim both HRA exemption and home loan interest deduction?</h3>
+      <p>Yes, you can claim both HRA exemption (if living in rented house) and home loan interest deduction under Section 24(b) (if you own another house). Both benefits can be claimed simultaneously if conditions are met.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is HRA exemption available in the new tax regime?</h3>
+      <p>No, HRA exemption under Section 10(13A) is not available in the new tax regime. It's available only in the old tax regime. Consider this while choosing between old and new tax regimes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What if my rent is less than 10% of my basic salary?</h3>
+      <p>If your rent is less than 10% of basic salary, the third component (Rent - 10% of basic) becomes negative or zero. In such cases, HRA exemption will be limited by the other two components only.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need to submit rent receipts to my employer every month?</h3>
+      <p>It depends on your company policy. Most companies require rent receipts quarterly or annually. However, you must maintain all receipts for IT department verification during ITR processing.</p>
+    </div>
+  </section>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="income-tax-calculator.html">💰 Income Tax Calculator</a>
+      <a href="gratuity-calculator.html">🎁 Gratuity Calculator</a>
+      <a href="epf-calculator.html">🏦 EPF Calculator</a>
+      <a href="ppf-maturity-calculator.html">💵 PPF Calculator</a>
+      <a href="fd-calculator.html">📊 FD Calculator</a>
+      <a href="../blog/section-80c-tax-saving-investments.html">📖 Section 80C Tax Saving Guide</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Upkarana Online Tools. All rights reserved.</p>
+    <p>
+      <a href="../privacy-policy.html">Privacy Policy</a> |
+      <a href="../contact.html">Contact Us</a> |
+      <a href="../about.html">About</a>
+    </p>
+  </div>
+</footer>
+
+<script src="hra-calculator.js"></script>
+</body>
+</html>
