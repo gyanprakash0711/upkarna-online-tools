@@ -134,6 +134,20 @@
 
   <!-- High Priority - Very Popular Calculators -->
   <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/in-hand-salary-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/salary-hike-percentage-calculator.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://gyanprakash0711.github.io/upkarna-online-tools/calculators/loan-eligibility-calculator.html</loc>
     <lastmod>2026-01-25</lastmod>
     <priority>0.85</priority>

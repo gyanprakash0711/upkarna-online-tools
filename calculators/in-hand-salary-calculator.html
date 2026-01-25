@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>In-Hand Salary Calculator – Calculate CTC to Take-Home Salary</title>
+
+  <meta name="description"
+        content="Free In-Hand Salary Calculator to convert CTC to take-home salary. Calculate net monthly salary after EPF, professional tax, income tax, and all deductions in India." />
+  <meta name="keywords" content="in-hand salary calculator, CTC to take home, salary calculator India, net salary calculator, CTC calculator, take home pay calculator">
+  <meta name="author" content="Upkarana Online Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gyanprakash0711.github.io/upkarna-online-tools/calculators/in-hand-salary-calculator.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFJVYTGFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4EFJVYTGFN');
+  </script>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="in-hand-salary-calculator.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="../index.html">💰 Upkarana Online Tools</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tools.html">Tools</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://gyanprakash0711.github.io/upkarna-online-tools/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Tools",
+    "item": "https://gyanprakash0711.github.io/upkarna-online-tools/tools.html"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "In-Hand Salary Calculator",
+    "item": "https://gyanprakash0711.github.io/upkarna-online-tools/calculators/in-hand-salary-calculator.html"
+  }]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the difference between CTC and in-hand salary?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "CTC (Cost to Company) is the total amount a company spends on an employee annually, including salary, benefits, EPF, insurance, and perks. In-hand salary (take-home salary) is the actual amount deposited in your bank account after deducting EPF, professional tax, income tax, and other deductions. In-hand salary is typically 30-50% less than CTC depending on the salary structure and tax bracket."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to calculate in-hand salary from CTC?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To calculate in-hand salary: (1) Calculate Basic Salary (usually 40-50% of CTC), (2) Calculate allowances (HRA, DA, Special Allowance), (3) Deduct EPF contribution (12% of basic), (4) Deduct professional tax (varies by state, typically ₹200/month), (5) Calculate taxable income and deduct income tax, (6) Add non-taxable allowances and bonuses. The final amount is your monthly take-home salary."
+    }
+  },{
+    "@type": "Question",
+    "name": "What percentage of CTC is take-home salary in India?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In India, take-home salary typically ranges from 50% to 70% of CTC. For lower salaries (below ₹5 LPA), take-home can be 65-70% of CTC. For mid-range salaries (₹5-15 LPA), it's around 55-65%. For higher salaries (above ₹15 LPA), take-home reduces to 50-55% due to higher tax brackets. The percentage depends on salary structure, tax exemptions, and deductions claimed."
+    }
+  },{
+    "@type": "Question",
+    "name": "What deductions are made from CTC to calculate take-home salary?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Major deductions from CTC include: (1) Employee EPF contribution (12% of basic salary), (2) Professional tax (₹200-₹2,500/month depending on state), (3) Income tax (based on tax slab and regime chosen), (4) Employee insurance premiums if any, (5) Other statutory deductions like ESI for salaries below ₹21,000/month. Additionally, some CTC components like employer's EPF contribution, gratuity, and reimbursements are not part of in-hand salary."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does in-hand salary include bonuses and variable pay?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Regular monthly in-hand salary does not include bonuses and variable pay. Bonuses, performance incentives, and variable pay are typically paid separately (quarterly or annually) and subject to tax deductions when paid. However, if you want to calculate annual take-home salary, you should include the post-tax amount of bonuses. Fixed allowances like HRA, DA, and special allowance are part of monthly in-hand salary."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is CTC to take-home salary calculation same for new and old tax regime?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The CTC breakdown and other deductions (EPF, professional tax) remain the same in both tax regimes. However, the income tax calculation differs significantly. Old regime allows deductions under Section 80C, 80D, HRA exemption, etc., which can reduce taxable income. New regime has lower tax rates but no deductions. Your take-home salary will be higher in whichever regime results in lower income tax liability. For salaries with high HRA or 80C investments, old regime may give higher take-home."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I increase my in-hand salary without changing CTC?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To increase in-hand salary: (1) Optimize salary structure with tax-free components like meal vouchers, phone reimbursement, leave travel allowance, (2) Claim all eligible tax deductions under Section 80C (EPF, ELSS, PPF), 80D (medical insurance), HRA exemption if paying rent, (3) Choose between old and new tax regime based on calculation, (4) Utilize NPS under 80CCD for additional ₹50,000 deduction, (5) Claim standard deduction of ₹50,000, (6) Invest in tax-saving instruments. Proper tax planning can increase take-home by 5-15%."
+    }
+  },{
+    "@type": "Question",
+    "name": "What is a good CTC to in-hand salary ratio?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A good CTC to in-hand ratio depends on your salary range. For entry-level (₹3-6 LPA): 65-70% is good. For mid-level (₹6-12 LPA): 60-65% is reasonable. For senior-level (₹12-25 LPA): 55-60% is normal. For very high salaries (above ₹25 LPA): 50-55% is typical. A ratio below 50% may indicate too many non-cash components in CTC or very high tax. Always compare in-hand salary rather than just CTC when evaluating job offers."
+    }
+  }]
+}
+</script>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools.html">Tools</a>
+    <span>›</span>
+    <span class="current">In-Hand Salary Calculator</span>
+  </nav>
+
+  <h1>In-Hand Salary Calculator</h1>
+  <p>Calculate your monthly take-home salary from CTC after all deductions including EPF, professional tax, and income tax.</p>
+
+  <form id="salaryForm">
+    
+    <div class="form-section">
+      <label for="annualCTC">Annual CTC (₹) *</label>
+      <input type="text" id="annualCTC" placeholder="e.g., 600000" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Enter your total annual Cost to Company</span>
+    </div>
+
+    <div class="form-section">
+      <label for="basicPercent">Basic Salary (% of CTC) *</label>
+      <input type="text" id="basicPercent" placeholder="e.g., 40" value="40" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Typical range: 40-50% of CTC</span>
+    </div>
+
+    <div class="form-section">
+      <label for="hraPercent">HRA (% of Basic) *</label>
+      <input type="text" id="hraPercent" placeholder="e.g., 50" value="50" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">House Rent Allowance (typically 40-50% of basic)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="monthlyRent">Monthly Rent Paid (₹)</label>
+      <input type="text" id="monthlyRent" placeholder="e.g., 15000" value="0" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Enter rent if you claim HRA exemption (optional)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="metro">Metro City</label>
+      <select id="metro">
+        <option value="yes">Yes (Delhi, Mumbai, Kolkata, Chennai)</option>
+        <option value="no">No (Other Cities)</option>
+      </select>
+      <span class="help-text">Affects HRA exemption percentage</span>
+    </div>
+
+    <div class="form-section">
+      <label for="specialAllowance">Special Allowance (% of CTC)</label>
+      <input type="text" id="specialAllowance" placeholder="e.g., 30" value="0" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Other allowances as % of CTC (optional)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="bonus">Annual Bonus (₹)</label>
+      <input type="text" id="bonus" placeholder="e.g., 50000" value="0" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Annual performance bonus or variable pay (optional)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="professionalTax">Monthly Professional Tax (₹)</label>
+      <input type="text" id="professionalTax" placeholder="e.g., 200" value="200" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">State professional tax (varies by state)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="taxRegime">Tax Regime</label>
+      <select id="taxRegime">
+        <option value="old">Old Regime (with deductions)</option>
+        <option value="new">New Regime (lower rates, no deductions)</option>
+      </select>
+      <span class="help-text">Choose your preferred income tax regime</span>
+    </div>
+
+    <div class="form-section">
+      <label for="section80C">Section 80C Investments (₹/year)</label>
+      <input type="text" id="section80C" placeholder="e.g., 150000" value="0" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">EPF, PPF, ELSS, NSC, etc. (Max ₹1,50,000 - only for old regime)</span>
+    </div>
+
+    <div class="form-section">
+      <label for="section80D">Section 80D - Medical Insurance (₹/year)</label>
+      <input type="text" id="section80D" placeholder="e.g., 25000" value="0" onkeypress="allowOnlyNumbers(event)" />
+      <span class="help-text">Health insurance premium (only for old regime)</span>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" onclick="calculateSalary()">Calculate In-Hand Salary</button>
+      <button type="button" class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <div id="errorMsg" class="error-msg"></div>
+
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <!-- HIGH-RPM AD SLOT -->
+  <div class="ads">Ad Space</div>
+
+  <!-- Content Sections -->
+  <div class="content-section">
+    <h2>Understanding CTC vs In-Hand Salary</h2>
+    <p><strong>CTC (Cost to Company)</strong> is the total amount a company spends on an employee annually. It includes your basic salary, allowances, bonuses, employer's EPF contribution, gratuity, medical insurance, and other benefits. However, many of these components are not part of your monthly bank credit.</p>
+    
+    <p><strong>In-Hand Salary (Take-Home Salary)</strong> is the actual amount you receive in your bank account each month after all mandatory deductions. This is typically 30-50% less than your CTC depending on your salary structure and tax bracket.</p>
+
+    <p><strong>Key Differences:</strong></p>
+    <ul>
+      <li><strong>Basic Salary:</strong> Forms the foundation of your salary (usually 40-50% of CTC)</li>
+      <li><strong>Allowances:</strong> HRA, DA, Special Allowance, Transport Allowance (some are taxable, some exempt)</li>
+      <li><strong>EPF Contribution:</strong> 12% employee + 12% employer contribution (employer's part included in CTC but not in-hand)</li>
+      <li><strong>Gratuity:</strong> Part of CTC but paid only on resignation/retirement (4.81% of basic)</li>
+      <li><strong>Bonuses:</strong> Performance bonuses included in CTC but paid separately</li>
+      <li><strong>Deductions:</strong> EPF, Professional Tax, Income Tax reduce in-hand salary</li>
+    </ul>
+
+    <p><strong>Example:</strong> If your CTC is ₹6,00,000 per year, your monthly in-hand salary might be around ₹35,000-40,000 after all deductions, which is about 70% of your average monthly CTC (₹50,000).</p>
+
+    <p><strong>Related Calculators:</strong> Use our <a href="hra-calculator.html">HRA Calculator</a> to maximize tax exemptions and <a href="income-tax-calculator.html">Income Tax Calculator</a> to compare old vs new tax regime.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Salary Components Breakdown</h2>
+    
+    <h3>1. Basic Salary</h3>
+    <p>Basic salary is the foundation of your CTC and typically ranges from <strong>40% to 50%</strong> of CTC. All other components like HRA, DA, and EPF are calculated as a percentage of basic salary. A higher basic means higher EPF contribution and better retirement corpus.</p>
+
+    <h3>2. HRA (House Rent Allowance)</h3>
+    <p>HRA is usually <strong>40-50% of basic salary</strong>. If you live in a rented house, you can claim HRA exemption, which is the minimum of:</p>
+    <ul>
+      <li>Actual HRA received</li>
+      <li>50% of basic (metro cities) or 40% of basic (non-metro)</li>
+      <li>Rent paid minus 10% of basic salary</li>
+    </ul>
+
+    <h3>3. Special Allowance</h3>
+    <p>This is the balancing component to make up your CTC. It's fully taxable and includes transport allowance, communication allowance, and other perks. Typically ranges from 20-40% of CTC.</p>
+
+    <h3>4. Dearness Allowance (DA)</h3>
+    <p>Common in government and PSU jobs. DA helps offset inflation and is usually a fixed percentage of basic salary.</p>
+
+    <h3>5. Employer's EPF Contribution</h3>
+    <p>Employer contributes <strong>12% of basic salary</strong> to your EPF account. This is part of CTC but not your take-home. It's a retirement benefit that accumulates with 8.15% annual interest (FY 2025-26).</p>
+
+    <h3>6. Gratuity</h3>
+    <p>Companies set aside <strong>4.81% of basic salary</strong> as gratuity provision (part of CTC). You receive this amount after completing 5 years of service when you resign or retire.</p>
+
+    <h3>7. Bonuses and Variable Pay</h3>
+    <p>Performance bonuses, joining bonuses, and retention bonuses are part of CTC but paid separately (quarterly or annually) after tax deductions.</p>
+
+    <p><strong>Pro Tip:</strong> When comparing job offers, always ask for a detailed salary breakup. A ₹10 LPA CTC with 45% basic is better than ₹10 LPA with 40% basic, as you'll get higher EPF and better retirement benefits.</p>
+
+    <p><strong>Blog Resource:</strong> Read our detailed guide on <a href="../blog/section-80c-tax-saving-investments.html">Section 80C Tax-Saving Investments</a> to maximize deductions and increase take-home salary.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Deductions from Salary</h2>
+    
+    <h3>1. Employee EPF Contribution (12% of Basic)</h3>
+    <p>Mandatory for companies with 20+ employees. 12% of your basic salary is deducted monthly and deposited in your EPF account. This is the biggest deduction but also a forced savings for retirement. EPF contributions qualify for ₹1,50,000 deduction under Section 80C.</p>
+
+    <h3>2. Professional Tax</h3>
+    <p>State-level tax ranging from <strong>₹200 to ₹2,500 per month</strong> depending on your state and salary slab:</p>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Monthly Professional Tax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maharashtra, Karnataka, West Bengal</td>
+          <td>₹200 per month</td>
+        </tr>
+        <tr>
+          <td>Andhra Pradesh, Telangana</td>
+          <td>₹150-200 per month</td>
+        </tr>
+        <tr>
+          <td>Gujarat, Madhya Pradesh</td>
+          <td>₹150-200 per month</td>
+        </tr>
+        <tr>
+          <td>Tamil Nadu</td>
+          <td>₹0 (No PT)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Note:</strong> Professional tax is eligible for deduction under Section 16 of Income Tax Act.</p>
+
+    <h3>3. Income Tax (TDS)</h3>
+    <p>Deducted monthly based on your projected annual income and tax regime chosen. Tax slabs for FY 2025-26:</p>
+    
+    <p><strong>New Tax Regime (Default):</strong></p>
+    <ul>
+      <li>₹0 - ₹3,00,000: Nil</li>
+      <li>₹3,00,001 - ₹7,00,000: 5%</li>
+      <li>₹7,00,001 - ₹10,00,000: 10%</li>
+      <li>₹10,00,001 - ₹12,00,000: 15%</li>
+      <li>₹12,00,001 - ₹15,00,000: 20%</li>
+      <li>Above ₹15,00,000: 30%</li>
+    </ul>
+
+    <p><strong>Old Tax Regime (with deductions):</strong></p>
+    <ul>
+      <li>₹0 - ₹2,50,000: Nil</li>
+      <li>₹2,50,001 - ₹5,00,000: 5%</li>
+      <li>₹5,00,001 - ₹10,00,000: 20%</li>
+      <li>Above ₹10,00,000: 30%</li>
+      <li>Plus: Section 80C (₹1.5L), 80D, HRA, Standard Deduction (₹50,000)</li>
+    </ul>
+
+    <h3>4. ESI (Employee State Insurance)</h3>
+    <p>Applicable if gross salary is below ₹21,000 per month. Employee contributes 0.75% and employer contributes 3.25% of gross salary.</p>
+
+    <h3>5. Other Deductions</h3>
+    <ul>
+      <li>Loan EMI deductions (if taken from employer)</li>
+      <li>Advance salary recovery</li>
+      <li>Loss of pay for leave without pay</li>
+      <li>Canteen or transport charges (if any)</li>
+    </ul>
+
+    <p><strong>Tax Planning Tip:</strong> Use our <a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a> if you have investment income, and optimize between old and new tax regime using our <a href="income-tax-calculator.html">Income Tax Calculator</a>.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Old vs New Tax Regime - Which Gives Higher Take-Home?</h2>
+    
+    <p>The choice between old and new tax regime significantly impacts your in-hand salary. Here's a detailed comparison:</p>
+
+    <h3>Old Tax Regime Benefits</h3>
+    <ul>
+      <li><strong>Section 80C Deduction:</strong> Up to ₹1,50,000 (EPF, PPF, ELSS, Insurance, Home Loan Principal)</li>
+      <li><strong>Section 80D:</strong> ₹25,000 for health insurance (₹50,000 for senior citizens)</li>
+      <li><strong>HRA Exemption:</strong> Can save ₹50,000-₹1,50,000 annually depending on rent paid</li>
+      <li><strong>Standard Deduction:</strong> ₹50,000</li>
+      <li><strong>Section 80CCD(1B):</strong> Additional ₹50,000 for NPS investment</li>
+      <li><strong>Home Loan Interest:</strong> Up to ₹2,00,000 under Section 24</li>
+      <li><strong>Leave Travel Allowance:</strong> Tax-free up to actual expenses</li>
+    </ul>
+
+    <h3>New Tax Regime Benefits</h3>
+    <ul>
+      <li><strong>Lower Tax Rates:</strong> 5% tax starts from ₹3 lakh (vs ₹2.5 lakh in old regime)</li>
+      <li><strong>Simpler Calculation:</strong> No need to maintain investment proofs</li>
+      <li><strong>Standard Deduction:</strong> ₹50,000 (available in new regime from FY 2023-24)</li>
+      <li><strong>Higher Rebate:</strong> Nil tax up to ₹7 lakh income under Section 87A</li>
+    </ul>
+
+    <h3>When to Choose Old Regime?</h3>
+    <ul>
+      <li>If you pay high rent and claim HRA exemption (₹1 lakh+ annually)</li>
+      <li>If you invest heavily in 80C instruments (₹1.5 lakh annually)</li>
+      <li>If you have home loan interest payment (₹2 lakh deduction)</li>
+      <li>If you have high medical insurance premiums (₹25,000-₹50,000)</li>
+      <li>Generally better for salaries above ₹10 LPA with investments</li>
+    </ul>
+
+    <h3>When to Choose New Regime?</h3>
+    <ul>
+      <li>If you have minimal investments and no HRA claims</li>
+      <li>If your income is ₹5-10 LPA without deductions</li>
+      <li>If you prefer simpler tax filing without maintaining proofs</li>
+      <li>If you don't pay rent or have home loan</li>
+    </ul>
+
+    <h3>Example Comparison (₹10 LPA CTC)</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Old Regime</th>
+          <th>New Regime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gross Taxable Income</td>
+          <td>₹8,50,000</td>
+          <td>₹8,50,000</td>
+        </tr>
+        <tr>
+          <td>Section 80C Deduction</td>
+          <td>-₹1,50,000</td>
+          <td>₹0</td>
+        </tr>
+        <tr>
+          <td>HRA Exemption</td>
+          <td>-₹1,00,000</td>
+          <td>₹0</td>
+        </tr>
+        <tr>
+          <td>Standard Deduction</td>
+          <td>-₹50,000</td>
+          <td>-₹50,000</td>
+        </tr>
+        <tr>
+          <td>Section 80D</td>
+          <td>-₹25,000</td>
+          <td>₹0</td>
+        </tr>
+        <tr>
+          <td>Taxable Income</td>
+          <td>₹6,25,000</td>
+          <td>₹8,00,000</td>
+        </tr>
+        <tr>
+          <td><strong>Annual Tax</strong></td>
+          <td><strong>₹43,750</strong></td>
+          <td><strong>₹55,000</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Monthly Tax</strong></td>
+          <td><strong>₹3,646</strong></td>
+          <td><strong>₹4,583</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Winner:</strong> In this example, old regime saves ₹11,250 annually (₹937/month) in taxes with proper tax planning.</p>
+
+    <p><strong>Action:</strong> Use our <a href="income-tax-calculator.html">Income Tax Calculator</a> to compare both regimes for your specific salary and investments.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>How to Increase In-Hand Salary Without Changing CTC</h2>
+    
+    <h3>1. Optimize Salary Structure</h3>
+    <p>Request your employer to restructure your salary with more tax-free components:</p>
+    <ul>
+      <li><strong>Meal Vouchers/Coupons:</strong> Up to ₹50/meal × 2 meals × 22 days = ₹2,200/month tax-free (₹26,400/year)</li>
+      <li><strong>Fuel Reimbursement:</strong> Tax-free if supported by bills</li>
+      <li><strong>Phone/Internet Reimbursement:</strong> Tax-free with bills</li>
+      <li><strong>Leave Travel Allowance (LTA):</strong> Tax-free twice in 4 years for domestic travel</li>
+      <li><strong>Books & Periodicals:</strong> Tax-free reimbursement for professional development</li>
+      <li><strong>Gadget Allowance:</strong> Laptop, phone reimbursement</li>
+    </ul>
+    <p><strong>Potential Savings:</strong> ₹50,000-₹1,00,000 annually in tax</p>
+
+    <h3>2. Maximize Section 80C Deductions (₹1.5 Lakh)</h3>
+    <ul>
+      <li><strong>EPF Contribution:</strong> Already deducted (12% of basic)</li>
+      <li><strong>PPF Investment:</strong> 7.1% interest (FY 2025-26), tax-free returns</li>
+      <li><strong>ELSS Mutual Funds:</strong> Market-linked returns with only 3-year lock-in</li>
+      <li><strong>Life Insurance Premium:</strong> For term insurance or ULIP</li>
+      <li><strong>Home Loan Principal Repayment:</strong> Counts toward 80C</li>
+      <li><strong>NSC, Tax-Saver FD:</strong> Fixed-income options</li>
+      <li><strong>Sukanya Samriddhi Yojana:</strong> For girl child (8.2% interest)</li>
+    </ul>
+    <p><strong>Tax Savings:</strong> Up to ₹46,800 (at 30% tax + 4% cess)</p>
+
+    <h3>3. Claim HRA Exemption</h3>
+    <p>If you're paying rent, claim HRA exemption even if living with family:</p>
+    <ul>
+      <li>Pay rent to parents/spouse (make sure they show it as income)</li>
+      <li>Keep rent receipts and rent agreement</li>
+      <li>HRA exemption can save ₹50,000-₹1,50,000 annually</li>
+      <li>Use our <a href="hra-calculator.html">HRA Calculator</a> to calculate exact exemption</li>
+    </ul>
+
+    <h3>4. Invest in NPS for Extra ₹50,000 Deduction</h3>
+    <p>Under Section 80CCD(1B), invest up to ₹50,000 in NPS (National Pension System) for additional tax deduction over and above ₹1.5 lakh under 80C.</p>
+    <p><strong>Tax Savings:</strong> ₹15,600 (at 30% tax + 4% cess)</p>
+
+    <h3>5. Section 80D - Health Insurance</h3>
+    <ul>
+      <li>Self & family: ₹25,000 deduction</li>
+      <li>Parents (above 60): ₹50,000 deduction</li>
+      <li>Preventive health checkup: ₹5,000 (within overall limit)</li>
+      <li>Use our <a href="medical-insurance-80d-calculator.html">Section 80D Calculator</a> for detailed calculation</li>
+    </ul>
+    <p><strong>Tax Savings:</strong> Up to ₹23,400 (at 30% tax + 4% cess)</p>
+
+    <h3>6. Home Loan Benefits</h3>
+    <ul>
+      <li><strong>Principal Repayment:</strong> ₹1.5 lakh under Section 80C</li>
+      <li><strong>Interest Payment:</strong> ₹2 lakh under Section 24 (old regime)</li>
+      <li><strong>Total Potential Savings:</strong> ₹1,09,200 annually (at 30% tax)</li>
+    </ul>
+
+    <h3>7. Choose Right Tax Regime</h3>
+    <p>Calculate tax in both old and new regime. If you have investments and HRA claims, old regime typically gives ₹20,000-₹50,000 more annual take-home.</p>
+
+    <h3>Summary: Potential Annual Increase in Take-Home</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Tax-Saving Strategy</th>
+          <th>Maximum Annual Tax Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Section 80C (₹1.5L)</td>
+          <td>₹46,800</td>
+        </tr>
+        <tr>
+          <td>Section 80D (₹75,000)</td>
+          <td>₹23,400</td>
+        </tr>
+        <tr>
+          <td>NPS 80CCD(1B) (₹50,000)</td>
+          <td>₹15,600</td>
+        </tr>
+        <tr>
+          <td>HRA Exemption (₹1.5L)</td>
+          <td>₹46,800</td>
+        </tr>
+        <tr>
+          <td>Home Loan Interest (₹2L)</td>
+          <td>₹62,400</td>
+        </tr>
+        <tr>
+          <td>Meal Vouchers & Reimbursements (₹50,000)</td>
+          <td>₹15,600</td>
+        </tr>
+        <tr>
+          <td><strong>Total Potential Savings</strong></td>
+          <td><strong>₹2,10,600/year</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Monthly Increase in Take-Home</strong></td>
+          <td><strong>₹17,550</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Blog Resources:</strong></p>
+    <ul>
+      <li><a href="../blog/section-80c-tax-saving-investments.html">Section 80C Tax-Saving Investments Guide</a></li>
+      <li><a href="../blog/build-1-crore-retirement-corpus.html">How to Build ₹1 Crore Retirement Corpus</a></li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Common Mistakes to Avoid</h2>
+    
+    <h3>1. Not Understanding CTC Breakup</h3>
+    <p>Many people accept job offers based on CTC without understanding the actual in-hand salary. Always ask for detailed salary breakup showing basic, allowances, EPF, gratuity, and bonuses separately.</p>
+    <p><strong>Red Flag:</strong> If basic salary is less than 35% of CTC, your EPF contribution and future retirement corpus will be lower.</p>
+
+    <h3>2. Ignoring Tax Regime Choice</h3>
+    <p>Defaulting to new regime without calculation can cost you ₹20,000-₹50,000 annually. Calculate both regimes or use our <a href="income-tax-calculator.html">Income Tax Calculator</a> before choosing.</p>
+
+    <h3>3. Not Claiming HRA Exemption</h3>
+    <p>If you're paying rent but not claiming HRA exemption, you're losing ₹50,000-₹1,50,000 in tax savings annually. Even if living with parents, you can pay them rent and claim exemption (parents must show it as income if above basic exemption limit).</p>
+
+    <h3>4. Missing Investment Deadlines</h3>
+    <p>Rushing to invest in Section 80C in March can lead to poor investment choices. Start early in the financial year and spread investments across EPF, PPF, and ELSS.</p>
+
+    <h3>5. Not Submitting Investment Proofs</h3>
+    <p>Submitting investment proofs late or not at all leads to excess TDS deduction. Submit proofs to employer by January to ensure correct tax deduction in remaining months.</p>
+
+    <h3>6. Overlooking Professional Tax</h3>
+    <p>Professional tax deducted is eligible for deduction under Section 16. Make sure it's reflected in Form 16 and claimed while filing ITR.</p>
+
+    <h3>7. Accepting Inflated CTC Numbers</h3>
+    <p>Some companies inflate CTC by including:</p>
+    <ul>
+      <li>Variable pay that's difficult to achieve (100% target achievement)</li>
+      <li>Retention bonuses payable after 3 years</li>
+      <li>Stock options with unrealistic valuations</li>
+      <li>Reimbursements that require extensive documentation</li>
+    </ul>
+    <p><strong>Advice:</strong> Focus on fixed monthly in-hand salary when comparing offers. Consider bonuses and variables as extra income, not guaranteed.</p>
+
+    <h3>8. Not Optimizing Salary Structure</h3>
+    <p>Request tax-free components like meal vouchers, phone reimbursement, and LTA. These can increase your take-home by ₹3,000-₹5,000 monthly without any CTC change.</p>
+
+    <h3>9. Ignoring Employer's EPF Contribution</h3>
+    <p>12% employer EPF contribution is part of CTC but accumulates for retirement. Consider this while evaluating long-term compensation. Higher basic = higher EPF = better retirement corpus.</p>
+
+    <h3>10. Not Reviewing Salary Slip</h3>
+    <p>Check your salary slip every month for:</p>
+    <ul>
+      <li>Correct TDS deduction based on regime chosen</li>
+      <li>Professional tax deduction</li>
+      <li>EPF deduction (12% of basic)</li>
+      <li>Any unauthorized deductions</li>
+      <li>Correct credit of reimbursements</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Example Calculations</h2>
+    
+    <h3>Example 1: Entry-Level Employee (₹5 LPA CTC)</h3>
+    <p><strong>CTC Breakup:</strong></p>
+    <ul>
+      <li>Annual CTC: ₹5,00,000</li>
+      <li>Basic Salary (40%): ₹2,00,000 (₹16,667/month)</li>
+      <li>HRA (50% of basic): ₹1,00,000 (₹8,333/month)</li>
+      <li>Special Allowance: ₹1,52,000 (₹12,667/month)</li>
+      <li>Employer EPF (12% of basic): ₹24,000 (not in-hand)</li>
+      <li>Gratuity provision (4.81% of basic): ₹9,620 (not in-hand)</li>
+      <li>Medical Insurance: ₹14,380 (not in-hand)</li>
+    </ul>
+
+    <p><strong>Monthly Deductions:</strong></p>
+    <ul>
+      <li>Employee EPF (12% of basic): ₹2,000</li>
+      <li>Professional Tax: ₹200</li>
+      <li>Income Tax (New Regime): ₹1,042 (₹12,500/year)</li>
+    </ul>
+
+    <p><strong>Monthly In-Hand Salary:</strong> ₹16,667 + ₹8,333 + ₹12,667 - ₹2,000 - ₹200 - ₹1,042 = <strong>₹34,425</strong></p>
+    <p><strong>Take-Home %:</strong> 82.6% of monthly gross (₹41,667)</p>
+    <p><strong>Annual In-Hand:</strong> ₹4,13,100 (82.6% of CTC)</p>
+
+    <h3>Example 2: Mid-Level Employee (₹12 LPA CTC)</h3>
+    <p><strong>CTC Breakup:</strong></p>
+    <ul>
+      <li>Annual CTC: ₹12,00,000</li>
+      <li>Basic Salary (45%): ₹5,40,000 (₹45,000/month)</li>
+      <li>HRA (50% of basic): ₹2,70,000 (₹22,500/month)</li>
+      <li>Special Allowance: ₹2,82,000 (₹23,500/month)</li>
+      <li>Annual Bonus: ₹60,000</li>
+      <li>Employer EPF (12% of basic): ₹64,800 (not in-hand)</li>
+      <li>Gratuity provision: ₹25,974 (not in-hand)</li>
+      <li>Medical Insurance: ₹17,226 (not in-hand)</li>
+    </ul>
+
+    <p><strong>Monthly Deductions:</strong></p>
+    <ul>
+      <li>Employee EPF (12% of basic): ₹5,400</li>
+      <li>Professional Tax: ₹200</li>
+      <li>Income Tax (Old Regime with ₹1.5L 80C + ₹1L HRA exemption): ₹3,854 (₹46,250/year)</li>
+    </ul>
+
+    <p><strong>Monthly In-Hand Salary:</strong> ₹45,000 + ₹22,500 + ₹23,500 - ₹5,400 - ₹200 - ₹3,854 = <strong>₹81,546</strong></p>
+    <p><strong>Annual In-Hand (excluding bonus):</strong> ₹9,78,552</p>
+    <p><strong>Annual In-Hand (with post-tax bonus ~₹45,000):</strong> ₹10,23,552 (85.3% of CTC)</p>
+
+    <h3>Example 3: Senior-Level Employee (₹25 LPA CTC)</h3>
+    <p><strong>CTC Breakup:</strong></p>
+    <ul>
+      <li>Annual CTC: ₹25,00,000</li>
+      <li>Basic Salary (40%): ₹10,00,000 (₹83,333/month)</li>
+      <li>HRA (50% of basic): ₹5,00,000 (₹41,667/month)</li>
+      <li>Special Allowance: ₹6,40,000 (₹53,333/month)</li>
+      <li>Annual Bonus/Variable: ₹2,00,000</li>
+      <li>Employer EPF (capped at ₹1,800/month): ₹21,600 (not in-hand)</li>
+      <li>Gratuity provision: ₹48,100 (not in-hand)</li>
+      <li>Medical Insurance: ₹30,000 (not in-hand)</li>
+      <li>Stock Options/ESOP: ₹60,300 (not in-hand)</li>
+    </ul>
+
+    <p><strong>Monthly Deductions:</strong></p>
+    <ul>
+      <li>Employee EPF (capped at ₹1,800/month): ₹1,800</li>
+      <li>Professional Tax: ₹200</li>
+      <li>Income Tax (Old Regime with max deductions): ₹16,146 (₹1,93,750/year)</li>
+    </ul>
+
+    <p><strong>Monthly In-Hand Salary:</strong> ₹83,333 + ₹41,667 + ₹53,333 - ₹1,800 - ₹200 - ₹16,146 = <strong>₹1,60,187</strong></p>
+    <p><strong>Annual In-Hand (excluding bonus/ESOP):</strong> ₹19,22,244</p>
+    <p><strong>Annual In-Hand (with post-tax bonus ~₹1,20,000):</strong> ₹20,42,244 (81.7% of CTC)</p>
+
+    <p><strong>Key Observation:</strong> As salary increases, take-home percentage decreases from 82.6% (₹5 LPA) to 81.7% (₹25 LPA) due to higher tax brackets and non-cash CTC components.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>State-wise Professional Tax Rates</h2>
+    
+    <p>Professional Tax is a state-level tax with different rates across India:</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Monthly Salary Slab</th>
+          <th>Professional Tax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Maharashtra</strong></td>
+          <td>Above ₹10,000/month</td>
+          <td>₹200/month (₹2,500 in February)</td>
+        </tr>
+        <tr>
+          <td><strong>Karnataka</strong></td>
+          <td>Above ₹15,000/month</td>
+          <td>₹200/month</td>
+        </tr>
+        <tr>
+          <td><strong>West Bengal</strong></td>
+          <td>Above ₹10,000/month</td>
+          <td>₹200/month (₹2,500 in February)</td>
+        </tr>
+        <tr>
+          <td><strong>Andhra Pradesh</strong></td>
+          <td>Above ₹15,000/month</td>
+          <td>₹150-200/month</td>
+        </tr>
+        <tr>
+          <td><strong>Telangana</strong></td>
+          <td>Above ₹15,000/month</td>
+          <td>₹200/month</td>
+        </tr>
+        <tr>
+          <td><strong>Gujarat</strong></td>
+          <td>Above ₹6,000/month</td>
+          <td>₹80-200/month based on slab</td>
+        </tr>
+        <tr>
+          <td><strong>Madhya Pradesh</strong></td>
+          <td>Above ₹15,000/month</td>
+          <td>₹208/month</td>
+        </tr>
+        <tr>
+          <td><strong>Odisha</strong></td>
+          <td>Above ₹15,000/month</td>
+          <td>₹200/month</td>
+        </tr>
+        <tr>
+          <td><strong>Assam</strong></td>
+          <td>Above ₹10,000/month</td>
+          <td>₹150-208/month</td>
+        </tr>
+        <tr>
+          <td><strong>Tamil Nadu</strong></td>
+          <td>All slabs</td>
+          <td>₹0 (No Professional Tax)</td>
+        </tr>
+        <tr>
+          <td><strong>Delhi, UP, Rajasthan, Punjab, Haryana</strong></td>
+          <td>All slabs</td>
+          <td>₹0 (No Professional Tax)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Note:</strong> Professional tax is eligible for deduction under Section 16(iii) of Income Tax Act, reducing your taxable income.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Documents Required for Salary Processing</h2>
+    
+    <h3>For Joining/HR Department</h3>
+    <ul>
+      <li>PAN Card (mandatory for TDS)</li>
+      <li>Aadhaar Card</li>
+      <li>Bank account details with cancelled cheque</li>
+      <li>Previous employer's Form 16 (for tax calculation)</li>
+      <li>Rent agreement and rent receipts (for HRA exemption)</li>
+      <li>Landlord's PAN if rent exceeds ₹1 lakh/year</li>
+    </ul>
+
+    <h3>For Tax Exemptions (Submit Annually)</h3>
+    <ul>
+      <li><strong>Section 80C:</strong> PPF passbook, ELSS statements, LIC premium receipts, NSC certificates, home loan statement</li>
+      <li><strong>Section 80D:</strong> Health insurance premium receipts for self, family, and parents</li>
+      <li><strong>HRA Exemption:</strong> Rent receipts, rent agreement, landlord's PAN</li>
+      <li><strong>NPS (80CCD):</strong> NPS contribution receipts</li>
+      <li><strong>Home Loan:</strong> Interest certificate from bank, principal repayment statement</li>
+      <li><strong>Preventive Health Checkup:</strong> Bills up to ₹5,000</li>
+    </ul>
+
+    <h3>For Reimbursements</h3>
+    <ul>
+      <li>Fuel bills (for conveyance allowance)</li>
+      <li>Phone/Internet bills (for communication allowance)</li>
+      <li>Travel tickets (for LTA)</li>
+      <li>Books/course fee receipts (for education allowance)</li>
+      <li>Meal receipts (if applicable)</li>
+    </ul>
+
+    <p><strong>Pro Tip:</strong> Maintain digital copies of all documents in Google Drive or similar cloud storage. Submit investment proofs to employer by December-January to avoid excess TDS in last quarter.</p>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="content-section">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <h3>What is the difference between CTC and in-hand salary?</h3>
+      <p>CTC (Cost to Company) is the total amount a company spends on an employee annually, including salary, benefits, EPF, insurance, and perks. In-hand salary (take-home salary) is the actual amount deposited in your bank account after deducting EPF, professional tax, income tax, and other deductions. In-hand salary is typically 30-50% less than CTC depending on the salary structure and tax bracket.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How to calculate in-hand salary from CTC?</h3>
+      <p>To calculate in-hand salary: (1) Calculate Basic Salary (usually 40-50% of CTC), (2) Calculate allowances (HRA, DA, Special Allowance), (3) Deduct EPF contribution (12% of basic), (4) Deduct professional tax (varies by state, typically ₹200/month), (5) Calculate taxable income and deduct income tax, (6) Add non-taxable allowances and bonuses. The final amount is your monthly take-home salary.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What percentage of CTC is take-home salary in India?</h3>
+      <p>In India, take-home salary typically ranges from 50% to 70% of CTC. For lower salaries (below ₹5 LPA), take-home can be 65-70% of CTC. For mid-range salaries (₹5-15 LPA), it's around 55-65%. For higher salaries (above ₹15 LPA), take-home reduces to 50-55% due to higher tax brackets. The percentage depends on salary structure, tax exemptions, and deductions claimed.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What deductions are made from CTC to calculate take-home salary?</h3>
+      <p>Major deductions from CTC include: (1) Employee EPF contribution (12% of basic salary), (2) Professional tax (₹200-₹2,500/month depending on state), (3) Income tax (based on tax slab and regime chosen), (4) Employee insurance premiums if any, (5) Other statutory deductions like ESI for salaries below ₹21,000/month. Additionally, some CTC components like employer's EPF contribution, gratuity, and reimbursements are not part of in-hand salary.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does in-hand salary include bonuses and variable pay?</h3>
+      <p>Regular monthly in-hand salary does not include bonuses and variable pay. Bonuses, performance incentives, and variable pay are typically paid separately (quarterly or annually) and subject to tax deductions when paid. However, if you want to calculate annual take-home salary, you should include the post-tax amount of bonuses. Fixed allowances like HRA, DA, and special allowance are part of monthly in-hand salary.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is CTC to take-home salary calculation same for new and old tax regime?</h3>
+      <p>The CTC breakdown and other deductions (EPF, professional tax) remain the same in both tax regimes. However, the income tax calculation differs significantly. Old regime allows deductions under Section 80C, 80D, HRA exemption, etc., which can reduce taxable income. New regime has lower tax rates but no deductions. Your take-home salary will be higher in whichever regime results in lower income tax liability. For salaries with high HRA or 80C investments, old regime may give higher take-home.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How can I increase my in-hand salary without changing CTC?</h3>
+      <p>To increase in-hand salary: (1) Optimize salary structure with tax-free components like meal vouchers, phone reimbursement, leave travel allowance, (2) Claim all eligible tax deductions under Section 80C (EPF, ELSS, PPF), 80D (medical insurance), HRA exemption if paying rent, (3) Choose between old and new tax regime based on calculation, (4) Utilize NPS under 80CCD for additional ₹50,000 deduction, (5) Claim standard deduction of ₹50,000, (6) Invest in tax-saving instruments. Proper tax planning can increase take-home by 5-15%.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is a good CTC to in-hand salary ratio?</h3>
+      <p>A good CTC to in-hand ratio depends on your salary range. For entry-level (₹3-6 LPA): 65-70% is good. For mid-level (₹6-12 LPA): 60-65% is reasonable. For senior-level (₹12-25 LPA): 55-60% is normal. For very high salaries (above ₹25 LPA): 50-55% is typical. A ratio below 50% may indicate too many non-cash components in CTC or very high tax. Always compare in-hand salary rather than just CTC when evaluating job offers.</p>
+    </div>
+  </div>
+
+  <div class="ads">Ad Space</div>
+
+  <div class="note">
+    <strong>Note:</strong> This calculator provides estimates for in-hand salary calculation from CTC. Actual take-home salary may vary based on your company's salary structure, tax regime chosen, exemptions claimed, state professional tax rates, and reimbursements. For evaluating job offers or salary hikes, use our <a href="salary-hike-percentage-calculator.html">Salary Hike Calculator</a>. Consult your HR department or a tax advisor for precise salary breakdown.
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Upkarana Online Tools. All rights reserved. | <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+<script src="in-hand-salary-calculator.js"></script>
+</body>
+</html>
