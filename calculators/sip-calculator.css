@@ -493,7 +493,7 @@ tbody tr:last-child td {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .back-to-top a {
@@ -510,10 +510,25 @@ tbody tr:last-child td {
   font-weight: bold;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .back-to-top a:hover {
   background: #1d4ed8;
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .back-to-top a {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
 }
