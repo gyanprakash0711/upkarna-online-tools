@@ -87,7 +87,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -150,7 +150,7 @@
 
   <div class="form-actions">
     <button onclick="calculateCI()">Calculate</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="result" class="result"></div>
@@ -198,11 +198,23 @@
   <!-- 🔹 CONTENT BREAK AD -->
   <div class="ads">Ad Space</div>
 
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="sip-calculator.html">📈 SIP Calculator</a>
+      <a href="lumpsum-investment-calculator.html">💰 Lumpsum Calculator</a>
+      <a href="simple-vs-compound-interest-calculator.html">📊 Simple vs Compound Interest</a>
+      <a href="fd-calculator.html">🏦 FD Calculator</a>
+      <a href="rd-calculator.html">💵 RD Calculator</a>
+      <a href="ppf-maturity-calculator.html">📈 PPF Calculator</a>
+    </div>
+  </section>
+
   <div class="note">
     <strong>Note:</strong> This calculator provides estimated results. Actual returns may vary.
   </div>
 
- <footer>
+  <footer>
   <div class="container">
     <p>&copy; 2026 Upkarna Online Tools. All rights reserved.</p>
     <p>
@@ -211,8 +223,12 @@
       <a href="../about.html">About</a>
     </p>
   </div>
-</footer>
+  </footer>
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="compound-interest-calculator.js"></script>

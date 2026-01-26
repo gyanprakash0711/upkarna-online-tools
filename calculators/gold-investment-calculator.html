@@ -100,7 +100,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -159,7 +159,7 @@
   <div class="form-actions">
     <button onclick="calculateGoldReturns()">Calculate</button>
     <button class="secondary-btn" onclick="resetForm()">Reset</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="errorMessage" class="error-msg"></div>
@@ -314,6 +314,18 @@
 
   <div class="ads">Ad Space</div>
 
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="sip-calculator.html">📈 SIP Calculator</a>
+      <a href="lumpsum-investment-calculator.html">💰 Lumpsum Calculator</a>
+      <a href="capital-gains-tax-calculator.html">💹 Capital Gains Tax Calculator</a>
+      <a href="mutual-fund-return-calculator.html">📊 Mutual Fund Calculator</a>
+      <a href="inflation-impact-calculator.html">📉 Inflation Impact</a>
+      <a href="wealth-goal-calculator.html">🎯 Wealth Goal Calculator</a>
+    </div>
+  </section>
+
   <div class="note">
     <strong>Disclaimer:</strong> This calculator provides estimates based on the inputs provided. Actual returns may vary based on gold quality, making charges, GST, storage costs, and market conditions. Consult a financial advisor before making investment decisions.
   </div>
@@ -330,6 +342,10 @@
   </footer>
 
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="gold-investment-calculator.js"></script>

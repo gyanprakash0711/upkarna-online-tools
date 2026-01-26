@@ -131,7 +131,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -184,7 +184,7 @@
 
   <div class="form-actions">
     <button onclick="calculateHRA()">Calculate HRA Exemption</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="errorMsg" class="error-msg"></div>
@@ -435,8 +435,6 @@
     </div>
   </section>
 
-</div>
-
   <div class="ads">
     <p>Ad Space</p>
   </div>
@@ -456,7 +454,9 @@
   </div>
   </footer>
 
-
+</div>
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="hra-calculator.js"></script>

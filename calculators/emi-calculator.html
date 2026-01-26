@@ -99,7 +99,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -151,7 +151,7 @@
 
   <div class="form-actions">
     <button onclick="calculateEMI()">Calculate EMI</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="result" class="result"></div>
@@ -192,9 +192,19 @@
   </section>
 
   <!-- 🔹 AD SLOT – CONTENT BREAK -->
-  <div class="ads">
-    Ad Space
-  </div>
+  <div class="ads">Ad Space</div>
+
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="loan-prepayment-foreclosure-calculator.html">🔄 Loan Prepayment Calculator</a>
+      <a href="loan-eligibility-calculator.html">📊 Loan Eligibility Calculator</a>
+      <a href="education-loan-calculator.html">🎓 Education Loan Calculator</a>
+      <a href="car-loan-vs-lease-calculator.html">🚗 Car Loan vs Lease</a>
+      <a href="compound-interest-calculator.html">📈 Compound Interest Calculator</a>
+      <a href="../blog/how-to-calculate-emi.html">📖 How to Calculate EMI Guide</a>
+    </div>
+  </section>
 
   <div class="note">
     <strong>Note:</strong> This calculator provides estimates for EMI calculation. Actual EMI may vary based on your loan terms, bank policies, processing fees, prepayment charges, and interest rate changes. Consult your bank or financial institution for exact EMI amount and loan details.
@@ -211,6 +221,10 @@
   </div>
   </footer>
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="emi-calculator.js"></script>

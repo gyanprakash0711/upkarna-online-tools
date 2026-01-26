@@ -109,7 +109,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -162,7 +162,7 @@
 
   <div class="form-actions">
     <button onclick="calculateGratuity()">Calculate Gratuity</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="errorMsg" class="error-msg"></div>
@@ -266,6 +266,18 @@
 
   <div class="ads">Ad Space</div>
 
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="epf-calculator.html">🏛️ EPF Calculator</a>
+      <a href="nps-calculator.html">💼 NPS Calculator</a>
+      <a href="retirement-planning-calculator.html">🏛️ Retirement Planning Calculator</a>
+      <a href="fire-calculator.html">🔥 FIRE Calculator</a>
+      <a href="in-hand-salary-calculator.html">💵 In-Hand Salary Calculator</a>
+      <a href="income-tax-calculator.html">📊 Income Tax Calculator</a>
+    </div>
+  </section>
+
   <div class="note">
     <strong>Note:</strong> This calculator provides estimates for gratuity calculation as per Payment of Gratuity Act 1972. Actual gratuity amount may vary based on your last drawn salary, years of service, and company policies. Consult your HR department for exact gratuity entitlement.
   </div>
@@ -282,6 +294,10 @@
   </footer>
 
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="gratuity-calculator.js"></script>

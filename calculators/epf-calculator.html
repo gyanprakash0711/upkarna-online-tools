@@ -109,7 +109,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -161,7 +161,7 @@
 
   <div class="form-actions">
     <button onclick="calculateEPF()">Calculate</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="result" class="result"></div>
@@ -210,6 +210,18 @@
 
   <div class="ads">Ad Space</div>
 
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="nps-calculator.html">💼 NPS Calculator</a>
+      <a href="ppf-maturity-calculator.html">💰 PPF Calculator</a>
+      <a href="gratuity-calculator.html">🎁 Gratuity Calculator</a>
+      <a href="retirement-planning-calculator.html">🏛️ Retirement Planning Calculator</a>
+      <a href="fire-calculator.html">🔥 FIRE Calculator</a>
+      <a href="income-tax-calculator.html">📊 Income Tax Calculator</a>
+    </div>
+  </section>
+
   <div class="note">
     <strong>Note:</strong> This calculator provides estimates for EPF maturity amount. Actual corpus may vary based on EPF interest rate changes, voluntary contributions, service tenure, and withdrawals. Consult EPFO or your employer for exact EPF balance and entitlement.
   </div>
@@ -226,6 +238,10 @@
   </footer>
 
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="epf-calculator.js"></script>

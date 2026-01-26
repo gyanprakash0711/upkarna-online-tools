@@ -108,7 +108,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -166,7 +166,7 @@
 
   <div class="form-actions">
     <button onclick="calculateNPS()">Calculate</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="result" class="result"></div>
@@ -216,6 +216,18 @@
 
   <div class="ads">Ad Space</div>
 
+  <section class="content-section">
+    <h2>Related Calculators & Resources</h2>
+    <div class="related-links">
+      <a href="epf-calculator.html">🏛️ EPF Calculator</a>
+      <a href="ppf-maturity-calculator.html">💰 PPF Calculator</a>
+      <a href="retirement-planning-calculator.html">🏛️ Retirement Planning Calculator</a>
+      <a href="fire-calculator.html">🔥 FIRE Calculator</a>
+      <a href="income-tax-calculator.html">📊 Income Tax Calculator</a>
+      <a href="mutual-fund-return-calculator.html">📈 Mutual Fund Calculator</a>
+    </div>
+  </section>
+
   <div class="note">
     <strong>Note:</strong> This calculator provides estimates for NPS maturity corpus and pension. Actual returns may vary based on fund performance, market conditions, annuity rates, and investment choices. Consult your NPS provider or financial advisor for personalized retirement planning.
   </div>
@@ -232,6 +244,10 @@
   </footer>
 
 
+</div>
+
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
 </div>
 
 <script src="nps-calculator.js"></script>

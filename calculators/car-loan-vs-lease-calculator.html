@@ -123,7 +123,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -185,7 +185,7 @@
 
   <div class="form-actions">
     <button onclick="calculateLoanVsLease()">Compare Loan vs Lease</button>
-    <button class="secondary-btn" onclick="downloadPDF()">Download as PDF</button>
+    <button class="secondary-btn" onclick="downloadPDF()">Download PDF</button>
   </div>
 
   <div id="errorMsg" class="error-msg"></div>
@@ -473,11 +473,13 @@
       <a href="../about.html">About</a>
     </p>
   </div>
-</footer>
+  </footer>
 
 </div>
 
-
+<div class="back-to-top">
+  <a href="#top" title="Back to Top">↑</a>
+</div>
 
 <script src="car-loan-vs-lease-calculator.js"></script>
 </body>
