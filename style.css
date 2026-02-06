@@ -136,6 +136,29 @@ body {
   margin-top: 20px;
 }
 
+.all-calculators-list {
+  columns: 3 220px;
+  column-gap: 24px;
+  padding-left: 20px;
+  margin: 12px 0 0;
+}
+
+.all-calculators-list li {
+  break-inside: avoid;
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.all-calculators-list a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.all-calculators-list a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
 /* ADS PLACEHOLDER */
 .ads {
   margin: 24px 0;
@@ -302,4 +325,10 @@ footer {
 footer a {
   color: var(--primary);
   text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .all-calculators-list {
+    columns: 1;
+  }
 }
